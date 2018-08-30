@@ -3,14 +3,10 @@ __author__ = "Eric"
 
 import time
 
-from testflow.lib.case.unity_game import QuirkCase
+from testflow.lib.case.basecase import QuirkCase
 from testflow.lib.utils.installation import *
 from poco.drivers.unity3d import UnityPoco
-from poco.drivers.android.uiautomation import AndroidUiautomationPoco
-from poco.exceptions import InvalidOperationException
-from pocounit.suite import PocoTestSuite
 
-from airtest.core.api import device as current_device, connect_device
 from airtest.core.api import *
 
 

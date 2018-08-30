@@ -1,7 +1,7 @@
 # coding=utf-8
 __author__ = "Eric"
 
-from testflow.lib.case.unity_game import QuirkCase
+from testflow.lib.case.basecase import QuirkCase
 from poco.drivers.unity3d import UnityPoco
 from testflow.lib.case.suite import QuirkSuite
 

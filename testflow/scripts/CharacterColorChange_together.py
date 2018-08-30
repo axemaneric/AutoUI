@@ -5,7 +5,7 @@ __author__ = "Eric"
 # Resets Avatar manually to default colors. Does not reset QUIRK
 # between tests.
 
-from testflow.lib.case.unity_game import QuirkCase
+from testflow.lib.case.basecase import QuirkCase
 from testflow.lib.utils.installation import install_android_app
 from poco.drivers.unity3d import UnityPoco
 from poco.exceptions import InvalidOperationException

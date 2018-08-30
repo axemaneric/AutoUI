@@ -3,14 +3,10 @@ __author__ = "Eric"
 
 import time
 
-from testflow.lib.case.unity_game import QuirkCase
-from testflow.lib.utils.installation import install_android_app
+from testflow.lib.case.basecase import QuirkCase
 from poco.drivers.unity3d import UnityPoco
 from poco.drivers.android.uiautomation import AndroidUiautomationPoco
-from poco.exceptions import InvalidOperationException
-from pocounit.suite import PocoTestSuite
 
-from airtest.core.api import device as current_device, connect_device
 from airtest.core.api import *
 
 
@@ -41,8 +37,6 @@ class OptionsMenu(QuirkCase):
             option.click()
             # snapshot('../../res/img/optionsmenu/grahpics/' + str(index) + '.png')
             index += 1
-
-    # def testInstances(self):
 
     def testAgeVerify(self):
         self.assertTrue(exists(Template(self.R(
@@ -112,9 +106,10 @@ class OptionsMenu(QuirkCase):
 
     def tearDown(self):
         self.assertEqual([], self.assertErrors)
-        # @classmethod
-        # def tearDownClass(cls):
-        #     pass
+
+    # @classmethod
+    # def tearDownClass(cls):
+    #     pass
 
 
 if __name__ == '__main__':
