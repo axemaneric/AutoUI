@@ -1,6 +1,6 @@
 # coding=utf-8
 
-from testflow.lib.case.unity_game import QuirkCase
+from testflow.lib.case.basecase import QuirkCase
 from pocounit.addons.poco.action_tracking import ActionTracker
 from pocounit.addons.poco.capturing import SiteCaptor
 from pocounit.suite import PocoTestSuite

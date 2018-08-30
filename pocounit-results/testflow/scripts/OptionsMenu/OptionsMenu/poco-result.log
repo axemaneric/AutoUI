@@ -1,0 +1,54 @@
+{"tag": "record", "value": {"event": "started", "filename": "screen-5200b76a4e77b43b.mp4", "orientation": "horizontal", "resolution": [1280, 720]}, "ts": 1535657570.5942218}
+{"tag": "runnerRuntimeLog", "value": {"content": "[rpc]connected"}, "ts": 1535657570.6161633}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "Options menu not found", "lineno": null, "srcfilename": null}, "ts": 1535657582.4942553}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "graphic_quality option may contain errors", "lineno": null, "srcfilename": null}, "ts": 1535657610.7590432}
+{"tag": "runnerRuntimeLog", "value": {"content": "Scrolling to find: master_volume"}, "ts": 1535657615.5905457}
+{"tag": "runnerRuntimeLog", "value": {"content": "[aircv][sift] threshold=0.6, result={'result': (639, 373), 'rectangle': [(0, 14), (0, 719), (1278, 719), (1278, 14)], 'confidence': 0.817907452583313}"}, "ts": 1535657634.165565}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "master_volume option may contain errors", "lineno": null, "srcfilename": null}, "ts": 1535657634.1675599}
+{"tag": "runnerRuntimeLog", "value": {"content": "[aircv][sift] threshold=0.6, result={'result': (639, 373), 'rectangle': [(0, 14), (0, 719), (1278, 719), (1278, 14)], 'confidence': 0.8177869021892548}"}, "ts": 1535657646.017307}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "music_volume option may contain errors", "lineno": null, "srcfilename": null}, "ts": 1535657646.0193017}
+{"tag": "runnerRuntimeLog", "value": {"content": "[aircv][sift] threshold=0.6, result={'result': (639, 373), 'rectangle': [(0, 14), (0, 719), (1278, 719), (1278, 14)], 'confidence': 0.8175893425941467}"}, "ts": 1535657657.953744}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "sfx_volume option may contain errors", "lineno": null, "srcfilename": null}, "ts": 1535657657.956736}
+{"tag": "runnerRuntimeLog", "value": {"content": "[aircv][sift] threshold=0.6, result={'result': (639, 373), 'rectangle': [(0, 14), (0, 719), (1278, 719), (1278, 14)], 'confidence': 0.8175406455993652}"}, "ts": 1535657672.738077}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "invert_camera_x option may contain errors", "lineno": null, "srcfilename": null}, "ts": 1535657672.7410688}
+{"tag": "runnerRuntimeLog", "value": {"content": "Scrolling to find: invert_camera_y"}, "ts": 1535657674.654767}
+{"tag": "runnerRuntimeLog", "value": {"content": "[aircv][sift] threshold=0.6, result={'result': (639, 384), 'rectangle': [(0, 25), (0, 719), (1278, 719), (1278, 25)], 'confidence': 0.7864864766597748}"}, "ts": 1535657692.499701}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "invert_camera_y option may contain errors", "lineno": null, "srcfilename": null}, "ts": 1535657692.5026932}
+{"tag": "runnerRuntimeLog", "value": {"content": "[aircv][sift] threshold=0.6, result={'result': (639, 384), 'rectangle': [(0, 25), (0, 719), (1278, 719), (1278, 25)], 'confidence': 0.7845588028430939}"}, "ts": 1535657704.2701066}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "camera_x_sensitivity option may contain errors", "lineno": null, "srcfilename": null}, "ts": 1535657704.2730982}
+{"tag": "runnerRuntimeLog", "value": {"content": "[aircv][sift] threshold=0.6, result={'result': (639, 385), 'rectangle': [(0, 26), (0, 719), (1278, 719), (1278, 26)], 'confidence': 0.7871347069740295}"}, "ts": 1535657716.0579681}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "camera_y_sensitivity option may contain errors", "lineno": null, "srcfilename": null}, "ts": 1535657716.0609605}
+{"tag": "runnerRuntimeLog", "value": {"content": "[aircv][sift] threshold=0.6, result={'result': (639, 385), 'rectangle': [(0, 25), (0, 719), (1279, 719), (1279, 25)], 'confidence': 0.7837581634521484}"}, "ts": 1535657729.2119772}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "camera_inertia option may contain errors", "lineno": null, "srcfilename": null}, "ts": 1535657729.2149692}
+{"tag": "runnerRuntimeLog", "value": {"content": "Scrolling to find: hide_chat_window"}, "ts": 1535657731.0983088}
+{"tag": "runnerRuntimeLog", "value": {"content": "[aircv][sift] threshold=0.6, result={'result': (639, 394), 'rectangle': [(0, 35), (0, 719), (1278, 719), (1278, 35)], 'confidence': 0.6661419868469238}"}, "ts": 1535657749.6800005}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "hide_chat_window option may contain errors", "lineno": null, "srcfilename": null}, "ts": 1535657749.6829932}
+{"tag": "runnerRuntimeLog", "value": {"content": "[aircv][sift] threshold=0.6, result={'result': (639, 394), 'rectangle': [(0, 35), (0, 719), (1278, 719), (1278, 35)], 'confidence': 0.6661419868469238}"}, "ts": 1535657761.7084687}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "hide_movement_joystick option may contain errors", "lineno": null, "srcfilename": null}, "ts": 1535657761.711461}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "Restore default screen not found", "lineno": null, "srcfilename": null}, "ts": 1535657765.4986577}
+{"tag": "runnerRuntimeLog", "value": {"content": "Scrolling to find: deny_all_friend_requests"}, "ts": 1535657774.1139271}
+{"tag": "runnerRuntimeLog", "value": {"content": "[aircv][sift] threshold=0.6, result={'result': (639, 2), 'rectangle': [(0, 0), (0, 362), (1278, 362), (1278, 0)], 'confidence': 0.667586550116539}"}, "ts": 1535657793.507371}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "deny_all_friend_requests option may contain errors", "lineno": null, "srcfilename": null}, "ts": 1535657793.511361}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "Blocked players screen not found", "lineno": null, "srcfilename": null}, "ts": 1535657796.9774494}
+{"tag": "runnerRuntimeLog", "value": {"content": "[aircv][sift] threshold=0.6, result={'result': (639, 392), 'rectangle': [(0, 33), (0, 719), (1279, 719), (1279, 33)], 'confidence': 0.7142760008573532}"}, "ts": 1535657811.4465065}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "spacer option may contain errors", "lineno": null, "srcfilename": null}, "ts": 1535657811.4485006}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "Google verification screen not found", "lineno": null, "srcfilename": null}, "ts": 1535657825.0248246}
+{"tag": "runnerRuntimeLog", "value": {"content": "Switching to android poco"}, "ts": 1535657825.0258226}
+{"tag": "runnerRuntimeLog", "value": {"content": "installed version is 37, installer version is 37. force_reinstall=False"}, "ts": 1535657829.9472728}
+{"tag": "runnerRuntimeLog", "value": {"content": "installed version is 0, installer version is 0. force_reinstall=False"}, "ts": 1535657830.105356}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "Fail authentication screen not found", "lineno": null, "srcfilename": null}, "ts": 1535657845.064324}
+{"tag": "runnerRuntimeLog", "value": {"content": "Switching to unity poco"}, "ts": 1535657845.064324}
+{"tag": "runnerRuntimeLog", "value": {"content": "[rpc]connected"}, "ts": 1535657845.1346447}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "Age verification screen not found", "lineno": null, "srcfilename": null}, "ts": 1535657852.7734408}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "Age verification screen not found", "lineno": null, "srcfilename": null}, "ts": 1535657852.890128}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535657865.2217462}
+{"tag": "runnerRuntimeLog", "value": {"content": "Scrolling to find: instances_header"}, "ts": 1535657866.806676}
+{"tag": "runnerRuntimeLog", "value": {"content": "Scrolling to find: terms"}, "ts": 1535657882.851766}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "Failed to find: privacy_policy", "lineno": null, "srcfilename": null}, "ts": 1535657896.396996}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "Failed to find: quirk_eula", "lineno": null, "srcfilename": null}, "ts": 1535657901.7813387}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "Failed to find: parents_guide", "lineno": null, "srcfilename": null}, "ts": 1535657907.1038132}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "Failed to find: help_and_support", "lineno": null, "srcfilename": null}, "ts": 1535657912.4054978}
+{"tag": "assertion", "value": {"method": "assert", "type": "Equal", "args": [[], []], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535657915.7899008}
+{"tag": "record", "value": {"event": "stopped", "filename": "screen-5200b76a4e77b43b.mp4"}, "ts": 1535657915.790898}
+{"tag": "siteSnapshot", "value": {"type": "screen", "dataPath": "snapshots/screen-1f281a662f5d03ac903c2dfedd579904.jpg", "site_id": "caseEnd", "width": 1280, "height": 720, "format": "jpg"}, "ts": 1535657925.1691058}
+{"tag": "siteSnapshot", "value": {"type": "hierarchy", "dataPath": "snapshots/hierarchy-1f281a662f5d03ac903c2dfedd579904.json", "site_id": "caseEnd"}, "ts": 1535657925.24487}

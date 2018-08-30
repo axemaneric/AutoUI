@@ -44,11 +44,12 @@ class OptionsMenu(QuirkCase):
         self.poco("too_young").click()
         self.poco("of_age").click()
         self.poco("continue").click()
-        self.assertTrue(self.poco("verified").exists())
+        self.assertTrue(self.poco("verified").exists(),
+                        "Verify text did not appear")
 
     def testLinkGoogle(self):
         print("Switching to android poco")
-        self.poco = AndroidUiautomationPoco()
+        self.poco = AndroidUiautomationPoco(screenshot_each_action=False)
         for x in range(0, 3):
             self.poco("com.google.android.gms:id/account_profile_picture").click()
             time.sleep(1)
@@ -78,7 +79,8 @@ class OptionsMenu(QuirkCase):
                     self.poco(option_name).offspring("false").click()
                 elif option.offspring("options_container").exists():
                     self.clickAll(option_name)
-                self.check(Template(self.R('res/img/optionsmenu/' + option_name + '.png')), "" + option_name + " option may contain errors")
+                self.check(Template(self.R('res/img/optionsmenu/' + option_name +
+                                           '.png')), "" + option_name + " option may contain errors")
             elif option_name == "restore_defaults":
                 # scrollDownClick clicks onto restore defaults button
                 if self.check(Template(self.R('res/img/optionsmenu/restore_defaults.png')), "Restore default screen not found"):
@@ -103,6 +105,7 @@ class OptionsMenu(QuirkCase):
                     self.check(Template(self.R(
                         'res/img/optionsmenu/' + term.get_name() + '.png')), "Failed to find: " + term.get_name())
                     self.poco("exit_container").click()
+            self.poco("exit_container").click()
 
     def tearDown(self):
         self.assertEqual([], self.assertErrors)

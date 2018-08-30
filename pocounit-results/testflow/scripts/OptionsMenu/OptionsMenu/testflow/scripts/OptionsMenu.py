@@ -3,14 +3,10 @@ __author__ = "Eric"
 
 import time
 
-from testflow.lib.case.unity_game import QuirkCase
-from testflow.lib.utils.installation import install_android_app
+from testflow.lib.case.basecase import QuirkCase
 from poco.drivers.unity3d import UnityPoco
 from poco.drivers.android.uiautomation import AndroidUiautomationPoco
-from poco.exceptions import InvalidOperationException
-from pocounit.suite import PocoTestSuite
 
-from airtest.core.api import device as current_device, connect_device
 from airtest.core.api import *
 
 
@@ -42,33 +38,13 @@ class OptionsMenu(QuirkCase):
             # snapshot('../../res/img/optionsmenu/grahpics/' + str(index) + '.png')
             index += 1
 
-    # def testInstances(self):
-
     def testAgeVerify(self):
-        self.poco("age_verified").offspring("background_b").click()
         self.assertTrue(exists(Template(self.R(
             'res/img/optionsmenu/age_verify.png'))), "Age verification screen not found")
-        self.poco("help").click()
-        self.assertTrue(exists(
-            Template(self.R('res/img/optionsmenu/age_help.png'))),
-            "Help screen not found")
-        self.poco("back").click()
-        self.poco("of_age").click()
         self.poco("too_young").click()
+        self.poco("of_age").click()
         self.poco("continue").click()
-        self.assertTrue(exists(Template(self.R(
-            'res/img/optionsmenu/parental_consent.png'))), "Parent consent sreen not found")
-        self.poco("not_now").click()
-        self.assertTrue(exists(Template(self.R(
-            'res/img/optionsmenu/parent_unavailable.png'))), "Parent availability screen not found")
-        self.poco("back").click()
-        self.poco("i_am_a_parent").click()
-        self.assertTrue(exists(Template(self.R(
-            'res/img/optionsmenu/parent_verification.png'))), "Parent verification screen not found")
-        self.poco("not_now").click()
-        self.poco("okay").click()
-        # self.poco("continue").click()
-        # self.assertTrue(self.poco("verified").exists())
+        self.assertTrue(self.poco("verified").exists())
 
     def testLinkGoogle(self):
         print("Switching to android poco")
@@ -102,7 +78,6 @@ class OptionsMenu(QuirkCase):
                     self.poco(option_name).offspring("false").click()
                 elif option.offspring("options_container").exists():
                     self.clickAll(option_name)
-                snapshot(self.R('res/img/optionsmenu/' + option_name + '.png'))
                 self.check(Template(self.R('res/img/optionsmenu/' + option_name + '.png')), "" + option_name + " option may contain errors")
             elif option_name == "restore_defaults":
                 # scrollDownClick clicks onto restore defaults button
@@ -131,9 +106,10 @@ class OptionsMenu(QuirkCase):
 
     def tearDown(self):
         self.assertEqual([], self.assertErrors)
-        # @classmethod
-        # def tearDownClass(cls):
-        #     pass
+
+    # @classmethod
+    # def tearDownClass(cls):
+    #     pass
 
 
 if __name__ == '__main__':
