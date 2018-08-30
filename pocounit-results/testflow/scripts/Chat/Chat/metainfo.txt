@@ -1,0 +1,5 @@
+{"tag": "MetaInfo", "value": {"type": "device", "value": {"udid": "5200b76a4e77b43b", "info": {"platform": "Android", "serialno": "5200b76a4e77b43b", "memory": "2G", "storage": "16G", "display": {"width": 720, "height": 1280, "density": 2.0}, "cpuinfo": null, "cpufreq": "1.6GHz", "sdkversion": 24, "gpu": {"gpuModel": "Mali-T830", "opengl": "OpenGL ES 3.2"}, "model": "SM-J701F", "manufacturer": "samsung"}}}}
+{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "Chat", "metainfo": {}}}}
+{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "Chat", "started_at": "2018-08-28 17:09:50.891853"}}}
+{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "Chat", "ended_at": "2018-08-28 17:10:05.339516"}}}
+{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "Chat", "success": true}}}

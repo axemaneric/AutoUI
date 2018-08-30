@@ -1,0 +1,10 @@
+{"tag": "record", "value": {"event": "started", "filename": "screen-5200b76a4e77b43b.mp4", "orientation": "horizontal", "resolution": [1280, 720]}, "ts": 1535570435.383099}
+{"tag": "runnerRuntimeLog", "value": {"content": "[rpc]connected"}, "ts": 1535570435.4070363}
+{"tag": "runnerRuntimeLog", "value": {"content": "[aircv][sift] threshold=0.6, result={'result': (638, 359), 'rectangle': [(0, 1), (0, 718), (1279, 718), (1279, 1)], 'confidence': 0.7506715357303619}"}, "ts": 1535570453.2762017}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "Not in Commons", "lineno": null, "srcfilename": null}, "ts": 1535570453.2791934}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "Age verification screen not found", "lineno": null, "srcfilename": null}, "ts": 1535570457.0838766}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "Chat screen not found", "lineno": null, "srcfilename": null}, "ts": 1535570464.7983031}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "Chat with emoji not found on screen", "lineno": null, "srcfilename": null}, "ts": 1535570510.4765184}
+{"tag": "record", "value": {"event": "stopped", "filename": "screen-5200b76a4e77b43b.mp4"}, "ts": 1535570510.4765184}
+{"tag": "siteSnapshot", "value": {"type": "screen", "dataPath": "snapshots/screen-1f281a662f5d03ac903c2dfedd579904.jpg", "site_id": "caseEnd", "width": 1280, "height": 720, "format": "jpg"}, "ts": 1535570516.1449687}
+{"tag": "siteSnapshot", "value": {"type": "hierarchy", "dataPath": "snapshots/hierarchy-1f281a662f5d03ac903c2dfedd579904.json", "site_id": "caseEnd"}, "ts": 1535570516.1968303}

@@ -1,0 +1,4 @@
+{"tag": "record", "value": {"event": "started", "filename": "screen-5200b76a4e77b43b.mp4", "orientation": "horizontal", "resolution": [1280, 720]}, "ts": 1535139500.2486093}
+{"tag": "runnerRuntimeLog", "value": {"content": "[rpc]connected"}, "ts": 1535139500.274539}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535139528.1285949}
+{"tag": "record", "value": {"event": "stopped", "filename": "screen-5200b76a4e77b43b.mp4"}, "ts": 1535139528.1296237}

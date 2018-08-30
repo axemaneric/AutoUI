@@ -1,0 +1,4 @@
+{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "FindersFalls", "metainfo": {}}}}
+{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "FindersFalls", "started_at": "2018-08-24 12:37:28.144636"}}}
+{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "FindersFalls", "ended_at": "2018-08-24 12:38:11.991844"}}}
+{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "FindersFalls", "success": true}}}

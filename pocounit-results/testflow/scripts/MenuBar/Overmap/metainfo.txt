@@ -1,0 +1,4 @@
+{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "Overmap", "metainfo": {}}}}
+{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "Overmap", "started_at": "2018-08-30 10:42:32.969912"}}}
+{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "Overmap", "ended_at": "2018-08-30 10:42:53.069686"}}}
+{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "Overmap", "success": true}}}

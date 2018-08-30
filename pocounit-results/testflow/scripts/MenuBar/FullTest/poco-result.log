@@ -1,0 +1,10 @@
+{"tag": "runnerRuntimeLog", "value": {"content": "[rpc]connected"}, "ts": 1535652010.99849}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "Failed to enter overmap", "lineno": null, "srcfilename": null}, "ts": 1535652026.8520205}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "Failed to enter homebase", "lineno": null, "srcfilename": null}, "ts": 1535652054.30945}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "Failed to enter quick play screen", "lineno": null, "srcfilename": null}, "ts": 1535652083.1022074}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "Failed to enter avatar customization", "lineno": null, "srcfilename": null}, "ts": 1535652099.3226428}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "Failed to enter tinkering screen", "lineno": null, "srcfilename": null}, "ts": 1535652125.587929}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "Failed to enter build menu", "lineno": null, "srcfilename": null}, "ts": 1535652149.231452}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "Failed to enter Gizmos building", "lineno": null, "srcfilename": null}, "ts": 1535652175.3258586}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "Failed to enter options menu", "lineno": null, "srcfilename": null}, "ts": 1535652198.421394}
+{"tag": "assertion", "value": {"method": "assert", "type": "Equal", "args": [[], []], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535652202.5708754}

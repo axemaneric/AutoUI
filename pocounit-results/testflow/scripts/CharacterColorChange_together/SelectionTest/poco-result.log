@@ -1,0 +1,82 @@
+{"tag": "record", "value": {"event": "started", "filename": "screen-5200b76a4e77b43b.mp4", "orientation": "horizontal", "resolution": [1280, 720]}, "ts": 1535050276.7131784}
+{"tag": "runnerRuntimeLog", "value": {"content": "[rpc]connected"}, "ts": 1535050276.7500794}
+{"tag": "runnerRuntimeLog", "value": {"content": "Checking for change..."}, "ts": 1535050276.7500794}
+{"tag": "runnerRuntimeLog", "value": {"content": "[aircv][sift] threshold=0.9, result={'result': (666, 360), 'rectangle': [(0, 12), (0, 708), (1279, 708), (1279, 12)], 'confidence': 0.7372169835865497}"}, "ts": 1535050277.762993}
+{"tag": "runnerRuntimeLog", "value": {"content": "[aircv][sift] threshold=0.9, result={'result': (639, 359), 'rectangle': [(0, 0), (0, 719), (1279, 719), (1279, 0)], 'confidence': 0.7594936731755733}"}, "ts": 1535050279.2602413}
+{"tag": "runnerRuntimeLog", "value": {"content": "[aircv][sift] threshold=0.9, result={'result': (639, 359), 'rectangle': [(0, 0), (0, 718), (1279, 718), (1279, 0)], 'confidence': 0.7568024013191461}"}, "ts": 1535050280.734631}
+{"tag": "runnerRuntimeLog", "value": {"content": "Scrolling up..."}, "ts": 1535050287.6977549}
+{"tag": "runnerRuntimeLog", "value": {"content": "Testing... BodyToggle"}, "ts": 1535050313.7828333}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050322.6536305}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050326.2174313}
+{"tag": "runnerRuntimeLog", "value": {"content": "Testing... FaceToggle"}, "ts": 1535050326.2174313}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050334.8382225}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050338.4553938}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050342.0691438}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050345.9629207}
+{"tag": "runnerRuntimeLog", "value": {"content": "Testing... HairToggle"}, "ts": 1535050345.963917}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050354.4390857}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050358.4314203}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050362.0930765}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050365.74001}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050369.3422108}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050372.9736896}
+{"tag": "runnerRuntimeLog", "value": {"content": "Scrolling..."}, "ts": 1535050374.8215973}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050383.7514377}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050387.7253683}
+{"tag": "runnerRuntimeLog", "value": {"content": "Testing... FacialHairToggle"}, "ts": 1535050387.7263658}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050396.4680402}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050400.0766404}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050403.6439807}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050407.3192027}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050410.9561617}
+{"tag": "runnerRuntimeLog", "value": {"content": "Testing... TopsToggle"}, "ts": 1535050410.9561617}
+{"tag": "runnerRuntimeLog", "value": {"content": "Scrolling nav bar..."}, "ts": 1535050412.7199657}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050426.5691576}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050430.1415892}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050433.7256384}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050437.642216}
+{"tag": "runnerRuntimeLog", "value": {"content": "Testing... BottomsToggle"}, "ts": 1535050437.642216}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050446.2253516}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050449.818515}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050453.3433406}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050456.9341898}
+{"tag": "runnerRuntimeLog", "value": {"content": "Testing... HandsToggle"}, "ts": 1535050456.9341898}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050465.5958931}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050469.2370212}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050473.108208}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050476.7152772}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050480.2928085}
+{"tag": "runnerRuntimeLog", "value": {"content": "Testing... ShoesToggle"}, "ts": 1535050480.2928085}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050488.9393344}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050492.6062098}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050496.1839242}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050500.0940561}
+{"tag": "runnerRuntimeLog", "value": {"content": "Testing... HatsToggle"}, "ts": 1535050500.0940561}
+{"tag": "runnerRuntimeLog", "value": {"content": "Scrolling nav bar..."}, "ts": 1535050501.5789065}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050515.309981}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050518.952267}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050522.9011722}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050526.5108647}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050530.1484385}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050533.772408}
+{"tag": "runnerRuntimeLog", "value": {"content": "Scrolling..."}, "ts": 1535050535.6537023}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050544.554131}
+{"tag": "runnerRuntimeLog", "value": {"content": "Testing... AccessoriesToggle"}, "ts": 1535050544.554131}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050553.2436907}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050556.8551743}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050560.7666779}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050564.37592}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050568.0011148}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050571.610773}
+{"tag": "runnerRuntimeLog", "value": {"content": "Testing... JewelryToggle"}, "ts": 1535050571.6117706}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050580.3675835}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050583.9879982}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050587.887648}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050591.4944682}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050595.074261}
+{"tag": "runnerRuntimeLog", "value": {"content": "Testing... BackpackToggle"}, "ts": 1535050595.074261}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050603.7717814}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050607.3697088}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050610.932213}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535050614.844679}
+{"tag": "record", "value": {"event": "stopped", "filename": "screen-5200b76a4e77b43b.mp4"}, "ts": 1535050614.844679}

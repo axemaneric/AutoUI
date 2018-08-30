@@ -1,0 +1,4 @@
+{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "MenuHomebase", "metainfo": {}}}}
+{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "MenuHomebase", "started_at": "2018-08-30 10:42:53.069686"}}}
+{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "MenuHomebase", "ended_at": "2018-08-30 10:43:41.379481"}}}
+{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "MenuHomebase", "success": true}}}

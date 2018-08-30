@@ -1,0 +1,4 @@
+{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "BackyardBrawl", "metainfo": {}}}}
+{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "BackyardBrawl", "started_at": "2018-08-24 12:36:43.770336"}}}
+{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "BackyardBrawl", "ended_at": "2018-08-24 12:37:28.144636"}}}
+{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "BackyardBrawl", "success": true}}}

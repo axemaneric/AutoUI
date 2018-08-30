@@ -1,0 +1,5 @@
+{"tag": "record", "value": {"event": "started", "filename": "screen-5200b76a4e77b43b.mp4", "orientation": "horizontal", "resolution": [1280, 720]}, "ts": 1535650983.14998}
+{"tag": "runnerRuntimeLog", "value": {"content": "[rpc]connected"}, "ts": 1535650983.1698236}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "Failed to enter homebase", "lineno": null, "srcfilename": null}, "ts": 1535651004.5928733}
+{"tag": "assertion", "value": {"method": "assert", "type": "Equal", "args": [[], []], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535651013.179974}
+{"tag": "record", "value": {"event": "stopped", "filename": "screen-5200b76a4e77b43b.mp4"}, "ts": 1535651013.179974}

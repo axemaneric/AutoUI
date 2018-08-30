@@ -1,0 +1,3 @@
+{"tag": "runnerRuntimeLog", "value": {"content": "[rpc]connected"}, "ts": 1535650953.249856}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "Failed to enter overmap", "lineno": null, "srcfilename": null}, "ts": 1535650968.5498729}
+{"tag": "assertion", "value": {"method": "assert", "type": "Equal", "args": [[], []], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535650973.0696862}

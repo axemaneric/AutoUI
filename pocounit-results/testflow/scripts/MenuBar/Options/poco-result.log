@@ -1,0 +1,5 @@
+{"tag": "record", "value": {"event": "started", "filename": "screen-5200b76a4e77b43b.mp4", "orientation": "horizontal", "resolution": [1280, 720]}, "ts": 1535651294.7035706}
+{"tag": "runnerRuntimeLog", "value": {"content": "[rpc]connected"}, "ts": 1535651294.7392106}
+{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "Failed to enter options menu", "lineno": null, "srcfilename": null}, "ts": 1535651305.3595102}
+{"tag": "assertion", "value": {"method": "assert", "type": "Equal", "args": [[], []], "msg": null, "lineno": null, "srcfilename": null}, "ts": 1535651311.5996156}
+{"tag": "record", "value": {"event": "stopped", "filename": "screen-5200b76a4e77b43b.mp4"}, "ts": 1535651311.5996156}

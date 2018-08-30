@@ -1,0 +1,4 @@
+{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "ColorToggleTest", "metainfo": {}}}}
+{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "ColorToggleTest", "started_at": "2018-08-23 11:46:23.317799"}}}
+{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "ColorToggleTest", "ended_at": "2018-08-23 11:51:08.842035"}}}
+{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "ColorToggleTest", "success": true}}}
