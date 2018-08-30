@@ -1,4 +1,0 @@
-{"tag": "record", "value": {"event": "started", "filename": "screen-5200b76a4e77b43b.mp4", "orientation": "horizontal", "resolution": [1280, 720]}, "ts": 1535501399.7491233}
-{"tag": "record", "value": {"event": "stopped", "filename": "screen-5200b76a4e77b43b.mp4"}, "ts": 1535501399.7511175}
-{"tag": "siteSnapshot", "value": {"type": "screen", "dataPath": "snapshots/screen-1f281a662f5d03ac903c2dfedd579904.jpg", "site_id": "caseEnd", "width": 1280, "height": 720, "format": "jpg"}, "ts": 1535501405.283189}
-{"tag": "siteSnapshot", "value": {"type": "hierarchy", "dataPath": "snapshots/hierarchy-1f281a662f5d03ac903c2dfedd579904.json", "site_id": "caseEnd"}, "ts": 1535501405.3395166}

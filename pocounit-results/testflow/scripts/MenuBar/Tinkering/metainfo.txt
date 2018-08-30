@@ -1,4 +1,0 @@
-{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "Tinkering", "metainfo": {}}}}
-{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "Tinkering", "started_at": "2018-08-30 10:45:13.028651"}}}
-{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "Tinkering", "ended_at": "2018-08-30 10:46:03.523843"}}}
-{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "Tinkering", "success": true}}}

@@ -1,4 +1,0 @@
-{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "QuickPlayBattle", "metainfo": {}}}}
-{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "QuickPlayBattle", "started_at": "2018-08-24 12:39:48.623213"}}}
-{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "QuickPlayBattle", "ended_at": "2018-08-24 12:40:37.332014"}}}
-{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "QuickPlayBattle", "success": true}}}

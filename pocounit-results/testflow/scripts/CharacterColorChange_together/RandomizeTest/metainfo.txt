@@ -1,4 +1,0 @@
-{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "RandomizeTest", "metainfo": {}}}}
-{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "RandomizeTest", "started_at": "2018-08-23 11:57:00.993748"}}}
-{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "RandomizeTest", "ended_at": "2018-08-23 11:58:14.463575"}}}
-{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "RandomizeTest", "success": true}}}

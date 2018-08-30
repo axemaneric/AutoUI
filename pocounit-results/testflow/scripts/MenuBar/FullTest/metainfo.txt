@@ -1,4 +1,0 @@
-{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "FullTest", "metainfo": {}}}}
-{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "FullTest", "started_at": "2018-08-30 14:20:34.906932"}}}
-{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "FullTest", "ended_at": "2018-08-30 14:20:35.159330"}}}
-{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "FullTest", "success": false}}}

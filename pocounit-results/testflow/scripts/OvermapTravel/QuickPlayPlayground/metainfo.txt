@@ -1,4 +1,0 @@
-{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "QuickPlayPlayground", "metainfo": {}}}}
-{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "QuickPlayPlayground", "started_at": "2018-08-24 12:38:54.303070"}}}
-{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "QuickPlayPlayground", "ended_at": "2018-08-24 12:39:48.623213"}}}
-{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "QuickPlayPlayground", "success": true}}}

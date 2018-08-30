@@ -1,4 +1,0 @@
-{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "Commons", "metainfo": {}}}}
-{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "Commons", "started_at": "2018-08-24 12:36:00.958356"}}}
-{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "Commons", "ended_at": "2018-08-24 12:36:43.770336"}}}
-{"tag": "MetaInfo", "value": {"type": "testcase", "value": {"name": "Commons", "success": true}}}

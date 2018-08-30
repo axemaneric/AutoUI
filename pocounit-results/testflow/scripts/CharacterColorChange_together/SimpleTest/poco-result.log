@@ -1,7 +1,0 @@
-{"tag": "record", "value": {"event": "started", "filename": "screen-5200b76a4e77b43b.mp4", "orientation": "horizontal", "resolution": [1280, 720]}, "ts": 1535049937.5457628}
-{"tag": "runnerRuntimeLog", "value": {"content": "[rpc]connected"}, "ts": 1535049937.5726907}
-{"tag": "runnerRuntimeLog", "value": {"content": "Checking for change..."}, "ts": 1535049937.5726907}
-{"tag": "runnerRuntimeLog", "value": {"content": "[aircv][sift] threshold=0.9, result={'result': (639, 359), 'rectangle': [(0, 0), (0, 719), (1279, 719), (1279, 0)], 'confidence': 0.9361328226029872}"}, "ts": 1535049941.107338}
-{"tag": "runnerRuntimeLog", "value": {"content": "Loaded into avatar customization"}, "ts": 1535049941.4383748}
-{"tag": "assertion", "value": {"method": "assert", "type": "True", "args": [true], "msg": "Test failed", "lineno": null, "srcfilename": null}, "ts": 1535049978.5151246}
-{"tag": "record", "value": {"event": "stopped", "filename": "screen-5200b76a4e77b43b.mp4"}, "ts": 1535049978.5161207}
