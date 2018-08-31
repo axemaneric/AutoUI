@@ -12,7 +12,9 @@ class MenuBarCase(QuirkCase):
 
     @classmethod
     def setUpClass(cls):
-        pass
+        super(MenuBarCase, cls).setUpClass()
+        cls.installQuirk()
+        cls.createAvatar()
 
     def setUp(self):
         self.maxDiff = None
@@ -23,9 +25,9 @@ class MenuBarCase(QuirkCase):
     def tearDown(self):
         self.assertEqual([], self.assertErrors)
 
-    @classmethod
-    def tearDownClass(cls):
-        pass
+    # @classmethod
+    # def tearDownClass(cls):
+    #     pass
 
     def testOvermap(self):
         self.poco("overmap").click()

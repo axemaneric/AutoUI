@@ -55,12 +55,8 @@ class AvatarCustomizationSuite(PocoTestSuite):
 class AvatarCustomizationCase(QuirkCase):
 
     @classmethod
-    def setUpClass(cls):
-        pass
-
-    @classmethod
     def tearDownClass(cls):
-        pass
+        super(QuirkCase, cls).tearDownClass()
 
     def colorToggleScrollUp(self):
         print("Scrolling up...")
@@ -85,6 +81,7 @@ class AvatarCustomizationCase(QuirkCase):
             except InvalidOperationException:
                 nav_bar = self.poco("SalonNavbarMobile(Clone)")
                 print("Scrolling nav bar...")
+                nav_bar.focus([0.5, 0.2]).drag_to(nav_bar.focus([0.5, 0.8]))
                 nav_bar.focus([0.5, 0.2]).drag_to(nav_bar.focus([0.5, 0.8]))
                 nav_bar.focus([0.5, 0.2]).drag_to(nav_bar.focus([0.5, 0.8]))
                 self.poco("ColorToggle").click()
@@ -115,10 +112,10 @@ class SimpleTest(AvatarCustomizationCase):
         self.poco("ZoomInButton").child("Button").click()
         self.poco("ZoomOutButton").child("Button").click()
 
-        self.poco("Commons").click()
+        self.poco("OptionsButton").click()
         self.assertTrue(
-            exists(Template(self.R('res/img/menu.png'))), "Failed to enter menu")
-        self.poco("CloseButton").click()
+            exists(Template(self.R('res/img/options.png'))), "Failed to enter optionsmenu")
+        self.poco("exit_container").click()
 
         self.poco("SkinToggle").click()
         start = self.poco("ContentGrid").child(
@@ -196,25 +193,25 @@ class SelectionTest(AvatarCustomizationCase):
                         nav_bar.focus([0.5, 0.2]))
                     self.poco(name).click()
                 finally:
-                    content_grid = self.poco("ContentGrid")
-                    content_grid_children = content_grid.children()
-                    index = 1
-                    for catalog_items in content_grid_children:
-                        try:
-                            catalog_items.child("Background").click()
-                        except InvalidOperationException:
-                            print('Scrolling...')
-                            content_grid.focus([0.5, 0.8]).drag_to(
-                                content_grid.focus([0.5, 0.2]))
-                            catalog_items.child("Background").click()
-                        finally:
-                            if recapture:
-                                snapshot("../../res/img/Avatar/" +
-                                         name + "/" + str(index) + ".png")
-                            self.assertTrue(exists(Template(self.R(
-                                "res/img/Avatar/" + name + "/" + str(index) + ".png"), rgb=True, threshold=0.9)))
-
-                        index += 1
+                    if self.poco("ContentGrid").exists():
+                        content_grid = self.poco("ContentGrid")
+                        content_grid_children = content_grid.children()
+                        index = 1
+                        for catalog_items in content_grid_children:
+                            try:
+                                catalog_items.child("Background").click()
+                            except InvalidOperationException:
+                                print('Scrolling...')
+                                content_grid.focus([0.5, 0.8]).drag_to(
+                                    content_grid.focus([0.5, 0.2]))
+                                catalog_items.child("Background").click()
+                            finally:
+                                if recapture:
+                                    snapshot("../../res/img/Avatar/" +
+                                             name + "/" + str(index) + ".png")
+                                self.assertTrue(exists(Template(self.R(
+                                    "res/img/Avatar/" + name + "/" + str(index) + ".png"), rgb=True, threshold=0.9)))
+                            index += 1
 
     def runTest(self):
 
@@ -242,15 +239,7 @@ class RandomizeTest(AvatarCustomizationCase):
 class FinishTest(AvatarCustomizationCase):
 
     def runTest(self):
-
-        self.poco("SaveButton").click()
-        self.assertTrue(exists(Template(self.R('res/img/nameselect.png'))))
-        # menu bar test
-        self.poco("Commons").click()
-        self.assertTrue(exists(Template(self.R('res/img/menu.png'))))
-        self.poco("CloseButton").click()
-        self.assertTrue(exists(Template(self.R('res/img/nameselect.png'))))
-        self.poco("CreateAccountButton").click()
+        self.createAvatar()
 
 
 if __name__ == '__main__':

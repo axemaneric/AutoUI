@@ -123,6 +123,6 @@ class QuirkCase(PocoTestCase):
 
     @classmethod
     def tearDownClass(cls):
-        super(QuirkCase, cls).tearDownClass()
         stop_app(cls.package_name)
         uninstall(cls.package_name)
+        super(QuirkCase, cls).tearDownClass()
