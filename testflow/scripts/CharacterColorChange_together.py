@@ -141,7 +141,7 @@ class SimpleTest(AvatarCustomizationCase):
 # Set recapture to true to recapture screenshots used to assert changes
 class ColorToggleTest(AvatarCustomizationCase):
 
-    def helper(self, toggle, scroll=False, recapture=True):
+    def helper(self, toggle, scroll=False, recapture=False):
 
         self.poco(toggle).click()
         content_grid = self.poco("ContentGrid").children()
@@ -177,7 +177,7 @@ class ColorToggleTest(AvatarCustomizationCase):
 # Set recapture to true to recapture screenshots used to assert changes
 class SelectionTest(AvatarCustomizationCase):
 
-    def helper(self, recapture=True):
+    def helper(self, recapture=False):
 
         nav_bar = self.poco("SalonNavbarMobile(Clone)")
         nav_bar_children = self.poco("ToggleGroup").children()
