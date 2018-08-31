@@ -1,6 +1,7 @@
 # coding=utf-8
 __author__ = "Eric"
 
+
 import time
 
 from testflow.lib.case.basecase import QuirkCase
@@ -15,10 +16,7 @@ class QuestsTab(QuirkCase):
     def setUpClass(cls):
         super(QuestsTab, cls).setUpClass()
         cls.installQuirk()
-        try:
-            cls.createAvatar()
-        except PocoNoSuchNodeException:
-            pass
+        cls.createAvatar()
 
     def setUp(self):
         self.poco("daily_quests").click()
