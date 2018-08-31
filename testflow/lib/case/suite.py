@@ -1,18 +1,11 @@
 # coding=utf-8
 
 from testflow.lib.case.basecase import QuirkCase
-from pocounit.addons.poco.action_tracking import ActionTracker
-from pocounit.addons.poco.capturing import SiteCaptor
 from pocounit.suite import PocoTestSuite
-from poco.drivers.android.uiautomation import AndroidUiautomationPoco
-from poco.drivers.unity3d import UnityPoco
 from testflow.lib.utils.installation import *
-from poco.exceptions import InvalidOperationException
-
 
 from airtest.core.api import device as current_device, connect_device
 from airtest.core.api import *
-from airtest.core.helper import device_platform
 
 
 class QuirkSuite(PocoTestSuite, QuirkCase):

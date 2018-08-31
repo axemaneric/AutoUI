@@ -63,18 +63,16 @@ class QuirkCase(PocoTestCase):
         self.poco("SaveButton").click()
         time.sleep(1)
         self.poco("CreateAccountButton").click()
-        time.sleep(10)
+        time.sleep(15)
         overmap_close = self.poco("OvermapCloseButton")
         if overmap_close.exists():
             overmap_close.click()
-        wait(Template(self.R('res/img/punk.png')))
-        self.poco("ActionButton").click()
-        # time.sleep(5)
-        # self.poco("DismissButton").click()
         time.sleep(5)
-        if exists(Template(self.R('res/img/overmap.png'))):
-            touch(Template(self.R('res/img/overmap_icons/icon_c.png')))
-        # wait(Template(self.R("res/img/Commons.png")))
+        # self.poco("ActionButton").click()
+        # time.sleep(5)
+        # if exists(Template(self.R('res/img/overmap.png'))):
+        #     touch(Template(self.R('res/img/overmap_icons/icon_c.png')))
+        # wait(Template(cls.R("res/img/Commons.png")))
 
     @classmethod
     def createAvatar(cls):
@@ -85,15 +83,15 @@ class QuirkCase(PocoTestCase):
         cls.poco("SaveButton").click()
         time.sleep(1)
         cls.poco("CreateAccountButton").click()
-        time.sleep(10)
+        time.sleep(15)
         overmap_close = cls.poco("OvermapCloseButton")
         if overmap_close.exists():
             overmap_close.click()
         time.sleep(5)
-        cls.poco("ActionButton").click()
-        time.sleep(5)
-        if exists(Template(cls.R('res/img/overmap.png'))):
-            touch(Template(cls.R('res/img/overmap_icons/icon_c.png')))
+        # cls.poco("ActionButton").click()
+        # time.sleep(5)
+        # if exists(Template(cls.R('res/img/overmap.png'))):
+        #     touch(Template(cls.R('res/img/overmap_icons/icon_c.png')))
         # wait(Template(cls.R("res/img/Commons.png")))
 
     @classmethod
@@ -115,6 +113,8 @@ class QuirkCase(PocoTestCase):
         cls.site_capturer = SiteCaptor(cls.poco)
         cls.register_addon(cls.site_capturer)
 
+    @classmethod
+    def installQuirk(cls):
         cls.package_name = 'com.ugen.playquirk'
         apk_path = cls.R('res/app/quirk.apk')
         install_android_app(current_device().adb, apk_path)

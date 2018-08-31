@@ -25,6 +25,7 @@ class TinkeringCase(QuirkCase):
     def setUp(self):
         self.maxDiff = None
         self.assertErrors = []
+        self.createAvatar()
 
     def runTest(self):
         self.poco("quick_menu_button").click()
