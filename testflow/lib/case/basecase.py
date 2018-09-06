@@ -56,14 +56,14 @@ class QuirkCase(PocoTestCase):
         return True
 
     def createAvatar(self):
-        self.maxDiff = None
-        self.assertErrors = []
+        # self.maxDiff = None
+        # self.assertErrors = []
         self.poco = UnityPoco()
-        wait(Template(self.R('res/img/default.png')))
-        self.poco("SaveButton").click()
+        time.sleep(20)
+        self.poco("SalonNavbarMobile(Clone)").child("SaveButton").click()
         time.sleep(1)
         self.poco("CreateAccountButton").click()
-        time.sleep(15)
+        time.sleep(20)
         overmap_close = self.poco("OvermapCloseButton")
         if overmap_close.exists():
             overmap_close.click()
@@ -74,16 +74,23 @@ class QuirkCase(PocoTestCase):
         #     touch(Template(self.R('res/img/overmap_icons/icon_c.png')))
         # wait(Template(cls.R("res/img/Commons.png")))
 
+    def installQuirk(self):
+        self.package_name = 'com.ugen.playquirk'
+        apk_path = self.R('res/app/quirk.apk')
+        install_android_app(current_device().adb, apk_path)
+        start_app(self.package_name)
+        time.sleep(30)
+
     @classmethod
     def createAvatar(cls):
         cls.maxDiff = None
         cls.assertErrors = []
         cls.poco = UnityPoco()
-        time.sleep(10)
+        time.sleep(20)
         cls.poco("SaveButton").click()
         time.sleep(1)
         cls.poco("CreateAccountButton").click()
-        time.sleep(15)
+        time.sleep(20)
         overmap_close = cls.poco("OvermapCloseButton")
         if overmap_close.exists():
             overmap_close.click()
