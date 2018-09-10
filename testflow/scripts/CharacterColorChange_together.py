@@ -6,6 +6,7 @@ __author__ = "Eric"
 # between tests.
 
 from testflow.lib.case.basecase import QuirkCase
+from testflow.lib.case.suite import QuirkSuite
 from testflow.lib.utils.installation import install_android_app
 from poco.drivers.unity3d import UnityPoco
 from poco.exceptions import InvalidOperationException
@@ -244,10 +245,6 @@ class FinishTest(AvatarCustomizationCase):
 
 if __name__ == '__main__':
     suite = AvatarCustomizationSuite([
-        SimpleTest(),
-        ColorToggleTest(),
-        SelectionTest(),
-        RandomizeTest(),
         FinishTest()
     ])
     import pocounit
