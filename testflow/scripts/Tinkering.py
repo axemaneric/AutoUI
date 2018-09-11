@@ -15,24 +15,25 @@ from pocounit.suite import PocoTestSuite
 from airtest.core.api import device as current_device, connect_device
 from airtest.core.api import *
 
+
 #--------------------------------------------------------------------#
 #   TEST CASE                                                        #
 #--------------------------------------------------------------------#
-
-
 class TinkeringCase(QuirkCase):
 
     def setUp(self):
+        print("setup")
         self.maxDiff = None
         self.assertErrors = []
         self.createAvatar()
 
     def runTest(self):
+
         self.poco("quick_menu_button").click()
         self.poco("tinkering").click()
         time.sleep(5)
 
-        self.check(Template(self.R('res/img/tinkering/main.png')),
+        self.check(Template(self.R('res/img/tinkering/main.jpg')),
                    "Failed to enter tinkering screen")
 
         weapon_list = self.poco("VerticalLayoutGroup").children()
@@ -44,13 +45,13 @@ class TinkeringCase(QuirkCase):
             address_base = 'res/img/tinkering/' + name + '/' + name
 
             weapon.click()
-            snapshot('../../' + address_base + '.png')
-            self.check(Template(self.R(address_base + '.png')),
+            # snapshot('../../' + address_base + '.jpg')
+            self.check(Template(self.R(address_base + '.jpg')),
                        "Failed to switch weapon: " + name)
 
             self.poco("ModifyLabel").click()
-            # snapshot('../../' + address_base + '_modify.png')
-            self.check(Template(self.R(address_base + '_modify.png')),
+            # snapshot('../../' + address_base + '_modify.jpg')
+            self.check(Template(self.R(address_base + '_modify.jpg')),
                        "Failed to enter modify screen: " + name)
 
             loadout_list = self.poco("BottomButtons").children()
@@ -67,13 +68,13 @@ class TinkeringCase(QuirkCase):
                 errortag = name + ": " + loadout_name
 
                 loadout.click()
-                # snapshot('../../' + new_base + '.png')
-                self.check(Template(self.R(new_base + '.png')),
+                # snapshot('../../' + new_base + '.jpg')
+                self.check(Template(self.R(new_base + '.jpg')),
                            "Failed to switch part: " + errortag)
 
                 self.poco("InfoButton").click()
-                # snapshot('../../' + new_base + '_info.png')
-                self.check(Template(self.R(new_base + '_info.png')),
+                # snapshot('../../' + new_base + '_info.jpg')
+                self.check(Template(self.R(new_base + '_info.jpg')),
                            "Failed to enter info screen: " + errortag)
 
                 self.poco("PartUpgradePanel(Clone)").child(
@@ -85,7 +86,7 @@ class TinkeringCase(QuirkCase):
 
         self.poco("TinkeringMainPanel(Clone)").child("ExitButton").click()
         time.sleep(10)
-        self.check(Template(self.R('res/img/Commons.png')),
+        self.check(Template(self.R('res/img/Commons.jpg')),
                    "Failed to return to Commons")
 
     # Outputs all assertion errors in list assertErrors

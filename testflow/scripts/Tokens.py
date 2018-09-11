@@ -21,12 +21,10 @@ from airtest.core.api import *
 #--------------------------------------------------------------------#
 class Tokens(QuirkCase):
 
-    @classmethod
-    def setUpClass(cls):
-        super(Tokens, cls).setUpClass()
-        cls.installQuirk()
-        cls.createAvatar()
+    def setUp(self):
+        self.createAvatar()
 
+    # opens pouch
     def pouchBefore(self):
         self.poco("tokens").click()
         snapshot('../../res/img/tokens/main.jpg')
@@ -34,6 +32,9 @@ class Tokens(QuirkCase):
                       "Tokens pouch did not show up")
         self.poco("ExitContainer").click()
 
+    # Character moves forward, if hit door, move right then move forward, until
+    # character reaches machine. Movement durations are assigned using trial
+    # and error, not automation.
     def useMachine(self):
         joystick = self.poco("VirtualJoystick")
         joystick.focus([0.2, 0.2]).start_gesture().hold(
@@ -65,6 +66,7 @@ class Tokens(QuirkCase):
         self.assertFalse(self.poco("RectangleBackgroundSolidImage").exists(),
                          "Token insert tab failed to hide")
 
+    # Opens pouch again to check if token has been used
     def pouchAfter(self):
         self.poco("tokens").click()
         snapshot('../../res/img/tokens/after.jpg')
