@@ -36,7 +36,7 @@ class OvermapTravelCase(QuirkCase):
             Template(self.R('res/img/overmap_icons/icon_' + outposts[location] + '.png')))
 
         time.sleep(3)
-        if exists(Template(self.R('res/img/infection.png'))):
+        if exists(Template(self.R('res/img/infection.png'))) and location == "playground":
             self.poco("DismissButton").click()
             location = location + "_infection"
 
