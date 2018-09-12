@@ -90,8 +90,8 @@ class TinkeringCase(QuirkCase):
         self.poco("TinkeringMainPanel(Clone)").child("ExitButton").click()
         time.sleep(10)
         # snapshot('../../res/img/Commons.jpg')
-        assert_exists(Template(self.R('res/img/Commons.jpg')),
-                      "Failed to return to Commons")
+        self.assertTrue(self.poco("VirtualJoystick").exists() and self.poco(
+            "TurnAndLookTouchpad").exists(), "Failed to return to Commons after exit tinkering")
 
 
 if __name__ == '__main__':
