@@ -23,8 +23,6 @@ class TinkeringCase(QuirkCase):
 
     def setUp(self):
         print("setup")
-        self.maxDiff = None
-        self.assertErrors = []
         self.createAvatar()
 
     def runTest(self):
@@ -94,10 +92,6 @@ class TinkeringCase(QuirkCase):
         # snapshot('../../res/img/Commons.jpg')
         assert_exists(Template(self.R('res/img/Commons.jpg')),
                       "Failed to return to Commons")
-
-    # Outputs all assertion errors in list assertErrors
-    def tearDown(self):
-        self.assertEqual([], self.assertErrors)
 
 
 if __name__ == '__main__':

@@ -1,6 +1,9 @@
 # coding=utf-8
 __author__ = "Eric"
 
+# Test script for traveling to every area on overmap. Each travel can be a
+# single test
+
 from testflow.lib.case.basecase import QuirkCase
 from poco.drivers.unity3d import UnityPoco
 from testflow.lib.case.suite import QuirkSuite
@@ -8,6 +11,10 @@ from testflow.lib.case.suite import QuirkSuite
 from airtest.core.api import *
 
 
+#--------------------------------------------------------------------#
+#   TEST CASE                                                        #
+#--------------------------------------------------------------------#
+# Battle tests may fail because of bugs like getting kicked into outpost
 class OvermapTravelCase(QuirkCase):
 
     # pass both setUpClass and tearDownClass when using with a suite
@@ -33,22 +40,22 @@ class OvermapTravelCase(QuirkCase):
                     "battle": "b",
                     "playground": "pg"}
         touch(
-            Template(self.R('res/img/overmap_icons/icon_' + outposts[location] + '.png')))
+            Template(self.R('res/img/overmap_icons/icon_' + outposts[location] + '.jpg')))
 
-        time.sleep(3)
-        if exists(Template(self.R('res/img/infection.png'))) and location == "playground":
+        time.sleep(10)
+        if location == "playground" and exists(Template(self.R('res/img/infection.jpg'))):
             self.poco("DismissButton").click()
             location = location + "_infection"
 
-        time.sleep(12)
+        time.sleep(5)
         if self.poco("looking").exists():
             self.poco("looking").click()
             self.poco("quick_play").click()
-            self.assertTrue(exists(Template(self.R('res/img/overmap.png'))))
+            self.assertTrue(exists(Template(self.R('res/img/overmap.jpg'))))
         else:
-            # snapshot('../../res/img/outposts/' + location + '.png')
+            snapshot('../../res/img/outposts/' + location + '.jpg')
             self.assertTrue(
-                exists(Template(self.R('res/img/outposts/' + location + '.png'))))
+                exists(Template(self.R('res/img/outposts/' + location + '.jpg'))))
 
             if location in ["battle", "playground"]:
                 self.poco("ExitButton").click()
@@ -87,6 +94,8 @@ class QuirkSpeedway(OvermapTravelCase):
     def runTest(self):
         self.travel("Quirk_Speedway")
 
+# Current build does not support battle
+
 
 class QuickPlayBattle(OvermapTravelCase):
 
@@ -107,8 +116,8 @@ if __name__ == '__main__':
         BackyardBrawl(),
         FindersFalls(),
         QuirkSpeedway(),
-        QuickPlayPlayground(),
-        QuickPlayBattle()
+        QuickPlayPlayground()
+        # QuickPlayBattle()
     ])
     import pocounit
     pocounit.run(suite)

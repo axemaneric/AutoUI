@@ -1,7 +1,8 @@
 # coding=utf-8
 __author__ = "Eric"
 
-# Test script for Selfie feature in top bar.
+# Test script for Selfie feature in top bar. Tests all frames, takes a selfie,
+# retakes, and share selfie feature.
 
 import time
 
@@ -14,13 +15,9 @@ from airtest.core.api import *
 
 class Selfie(QuirkCase):
 
-    @classmethod
-    def setUpClass(cls):
-        super(Selfie, cls).setUpClass()
-        cls.installQuirk()
-        cls.createAvatar()
-
     def setUp(self):
+        self.createAvatar()
+        # snapshot('../../res/img/Commons.jpg')
         self.poco("camera").click()
 
     # Used for allowing access to access android files
@@ -35,7 +32,7 @@ class Selfie(QuirkCase):
         self.poco = UnityPoco()
 
     def cameraTrigger(self):
-        if exists(Template(self.R('res/img/Commons.jpg'))):
+        if self.poco("camera").exists():
             self.poco("camera").click()
         self.poco("take_photo").click()
         assert_exists(Template(self.R('res/img/selfie/frame.jpg')),
@@ -53,6 +50,34 @@ class Selfie(QuirkCase):
             self.poco("exit_camera").click()
         assert_exists(Template(self.R('res/img/Commons.jpg')),
                       "Failed to return to Commons after exit camera")
+
+    def zoomTest(self):
+        self.poco("handle").drag_to(self.poco("zoom_slider").focus([0.5, 0]))
+        snapshot('../../res/img/selfie/100.jpg')
+        assert_exists(Template(self.R('res/img/selfie/100.jpg')),
+                      "Failed to zoom in 100%")
+        self.poco("handle").drag_to(self.poco("zoom_slider").focus([0.5, 1]))
+        snapshot('../../res/img/selfie/0.jpg')
+        assert_exists(Template(self.R('res/img/selfie/0.jpg')),
+                      "Failed to zoom out 0%")
+
+    def emoteTest(self):
+        emotes = self.poco("emotes_container").children()
+        for emote in emotes:
+            emote.click()
+            snapshot('../../res/img/selfie/' + emote.get_name() + '.jpg')
+            assert_exists(Template(self.R('res/img/selfie/' + emote.get_name() +
+                                          '.jpg')), "Emote: " + emote.get_name() + " not used")
+            time.sleep(5)
+
+    def reverseTest(self):
+        self.poco("toggle").click()
+        snapshot('../../res/img/selfie/scenic.jpg')
+        assert_exists(Template(self.R('res/img/selfie/scenic.jpg')),
+                      "Failed to scenic mode")
+        self.poco("toggle").click()
+        assert_exists(Template(self.R('res/img/selfie/menu.jpg')),
+                      "Failed to switch to selfie mode")
 
     def retakeTest(self):
         self.cameraTrigger()
@@ -127,6 +152,9 @@ class Selfie(QuirkCase):
     def runTest(self):
         assert_exists(Template(self.R('res/img/selfie/menu.jpg')),
                       "Failed to load into camera")
+        self.zoomTest()
+        self.emoteTest()
+        self.reverseTest()
         self.takeSelfieTest()
         self.frameTest()
         self.shareTest(file_access=True)

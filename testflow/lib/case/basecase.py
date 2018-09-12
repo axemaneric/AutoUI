@@ -40,9 +40,10 @@ class QuirkCase(PocoTestCase):
     def installQuirkClass(cls):
         cls.package_name = 'com.ugen.playquirk'
         apk_path = cls.R('res/app/quirk.apk')
-        install_android_app(current_device().adb, apk_path)
-        start_app(cls.package_name)
-        time.sleep(30)
+        if cls.package_name not in current_device().list_app():
+            install_android_app(current_device().adb, apk_path)
+            start_app(cls.package_name)
+            time.sleep(30)
 
     @classmethod
     def setUpClass(cls):

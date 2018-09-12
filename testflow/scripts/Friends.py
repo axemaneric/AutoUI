@@ -1,7 +1,9 @@
 # coding=utf-8
 __author__ = "Eric"
 
-# Test script for Friends feature in top bar.
+# Test script for Friends feature in top bar. Tests if all tabs in friends
+# are accessible and contains all UI elements. Recent_friends tab is a bad
+# test: refer to recentsTest()
 
 import time
 
@@ -12,15 +14,16 @@ from poco.drivers.android.uiautomation import AndroidUiautomationPoco
 from airtest.core.api import *
 
 
+#--------------------------------------------------------------------#
+#   TEST CASE                                                        #
+#--------------------------------------------------------------------#
+# BEGIN -> Enter friends menu -> Check in main -> Click Recents ->
+# If players exist, check if player card exists in menu, otherwise skip ->
+# Click invite friend menu -> check if UI elements exist
 class Friends(QuirkCase):
 
-    @classmethod
-    def setUpClass(cls):
-        super(Friends, cls).setUpClass()
-        cls.installQuirk()
-        cls.createAvatar()
-
     def setUp(self):
+        self.createAvatar()
         self.poco("friends").click()
         # snapshot("../../res/img/friends/main.jpg")
 
@@ -40,6 +43,7 @@ class Friends(QuirkCase):
         #     self.assertTrue(self.poco("input").exists(),
         #                     "Friend search does not exists")
 
+    # check if refer page appears and has relevant UI
     def referTest(self):
         self.poco("invite_a_friend").click()
         # snapshot('../../res/img/friends/invite.jpg')
@@ -50,6 +54,7 @@ class Friends(QuirkCase):
             self.assertTrue(self.poco("send_an_invitation").exists(),
                             "Send invitation button does not exist")
 
+    # return to main friends menu
     def menuTest(self):
         self.poco("friends").click()
         with self.subTest(page="friends"):
@@ -60,6 +65,7 @@ class Friends(QuirkCase):
                       "Failed to return to Commons")
 
     def runTest(self):
+        assert_exists(Template(self.R('res/img/friends/main.jpg')))
         self.recentsTest()
         self.referTest()
         self.menuTest()
