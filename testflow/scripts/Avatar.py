@@ -15,6 +15,12 @@ from airtest.core.api import device as current_device, connect_device
 from airtest.core.api import *
 
 
+#--------------------------------------------------------------------#
+#   TEST CASE                                                        #
+#--------------------------------------------------------------------#
+# takes some time to finish this test
+# assertions for small items such as earrings are very difficult and may require
+# manual inspection
 class Avatar(QuirkCase):
 
     def setUp(self):
@@ -22,6 +28,9 @@ class Avatar(QuirkCase):
         self.poco("quick_menu_button").click()
         self.poco("avatar").click()
 
+    # loopItems clicks on every item in item panel
+    # set recapture to true when new cosmetics come out to create new check
+    # templates
     def loopItems(self, name, recapture=True):
         if self.poco("NewGrid").exists():
             content_grid = self.poco("NewGrid")
@@ -32,19 +41,31 @@ class Avatar(QuirkCase):
             try:
                 item.child("Background").click()
             except InvalidOperationException:
-                print('Scrolling...')
                 scrollview = self.poco("Viewport")
-                scrolls = 0
-                while scrolls < 8:
-                    try:
-                        item.child("Background").click()
-                        break
-                    except InvalidOperationException:
-                        print("Scrolling to find")
-                        scrollview.focus([1, 0.8]).drag_to(
-                            scrollview.focus([1, 0.2]))
-                        time.sleep(1)
-                    scrolls += 1
+                if index == 1:
+                    scrolls = 0
+                    while scrolls < 8:
+                        try:
+                            item.child("Background").click()
+                            break
+                        except InvalidOperationException:
+                            print('Scrolling...')
+                            scrollview.focus([1, 0.2]).drag_to(
+                                scrollview.focus([1, 0.8]))
+                            time.sleep(1)
+                        scrolls += 1
+                else:
+                    scrolls = 0
+                    while scrolls < 8:
+                        try:
+                            item.child("Background").click()
+                            break
+                        except InvalidOperationException:
+                            print('Scrolling...')
+                            scrollview.focus([1, 0.8]).drag_to(
+                                scrollview.focus([1, 0.2]))
+                            time.sleep(1)
+                        scrolls += 1
             finally:
                 if recapture:
                     snapshot("../../res/img/avatar/" +
@@ -53,6 +74,7 @@ class Avatar(QuirkCase):
                     "res/img/Avatar/" + name + "/" + str(index) + ".jpg"), rgb=True, threshold=0.9)))
             index += 1
 
+    # loops through navigation bar to go through every toggle to retrieve items
     def runTest(self):
         nav_bar = self.poco("SalonNavbarMobile(Clone)")
         nav_bar_children = self.poco("ToggleGroup").children()
@@ -78,8 +100,10 @@ class Avatar(QuirkCase):
                 else:
                     self.loopItems(name)
 
-    def tearDown(self):
         self.poco("DismissButton").click()
+        snapshot('../../res/img/avatar/exitalert.jpg')
+        assert_exists(Template(self.R('res/img/avatar/exitalert.jpg')),
+                      "Didn't remind player that character is wearing unpurchased items")
 
 
 if __name__ == '__main__':

@@ -1,6 +1,11 @@
 # coding=utf-8
 __author__ = "Eric"
 
+# Test script for options menu. Accesses the option menu directly from inital
+# avatar creation screen. Scrolls through every single item, testing if UI
+# is interactable and scenes are loaded in correctly. CANNOT ACTUALLY TEST
+# FOR FUNCTIONALITY OF EACH OPTION
+
 import time
 
 from testflow.lib.case.basecase import QuirkCase
@@ -10,6 +15,13 @@ from poco.drivers.android.uiautomation import AndroidUiautomationPoco
 from airtest.core.api import *
 
 
+#--------------------------------------------------------------------#
+#   TEST CASE                                                        #
+#--------------------------------------------------------------------#
+# If option is a toggle, clicks on all possible areas to test toggles
+# If option is a slider, slides to off
+# Also tests whether age can be verified and link account opens up Google
+# login page
 class OptionsMenu(QuirkCase):
 
     # @classmethod
@@ -17,8 +29,6 @@ class OptionsMenu(QuirkCase):
     #     pass
 
     def setUp(self):
-        self.maxDiff = None
-        self.assertErrors = []
         self.poco = UnityPoco()
         self.poco("OptionsButton").click()
 
@@ -106,9 +116,6 @@ class OptionsMenu(QuirkCase):
                         'res/img/optionsmenu/' + term.get_name() + '.png')), "Failed to find: " + term.get_name())
                     self.poco("exit_container").click()
             self.poco("exit_container").click()
-
-    def tearDown(self):
-        self.assertEqual([], self.assertErrors)
 
     # @classmethod
     # def tearDownClass(cls):
