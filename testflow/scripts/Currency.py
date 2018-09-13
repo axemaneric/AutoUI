@@ -12,12 +12,18 @@ from poco.drivers.android.uiautomation import AndroidUiautomationPoco
 from airtest.core.api import *
 
 
+#--------------------------------------------------------------------#
+#   BASE CASE                                                        #
+#--------------------------------------------------------------------#
 class Currency(QuirkCase):
 
     def setUp(self):
         self.createAvatar()
 
 
+#--------------------------------------------------------------------#
+#   TEST CASES                                                       #
+#--------------------------------------------------------------------#
 # Goes into store and attempts to use 15 crystals to buy 250 credits
 class Credits(Currency):
 
@@ -35,8 +41,9 @@ class Credits(Currency):
                       "Crystals were not used to buy credits")
 
 
+# Check if crystals icon leads to Crystals purchase screen
 class Crystals(Currency):
-    #
+
     def runTest(self):
         self.poco("crystals").click()
         # snapshot('../../res/img/currency/crystals.jpg')
@@ -47,6 +54,7 @@ class Crystals(Currency):
         self.poco("DismissButton").click()
 
 
+# Tests if free name change feature is working
 class NameChange(Currency):
 
     def setUp(self):
