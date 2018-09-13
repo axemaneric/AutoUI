@@ -20,8 +20,6 @@ class QuirkSuite(PocoTestSuite, QuirkCase):
         start_app(self.package_name)
         time.sleep(30)
 
-        self.createAvatar()
-
     def tearDown(self):
         stop_app(self.package_name)
         uninstall(self.package_name)

@@ -145,15 +145,14 @@ class QuirkCase(PocoTestCase):
 
     def createAvatar(self):
         self.poco = UnityPoco()
-        time.sleep(20)
         self.poco("SaveButton").click()
         time.sleep(1)
         self.poco("CreateAccountButton").click()
-        time.sleep(20)
+        time.sleep(10)
         overmap_close = self.poco("OvermapCloseButton")
         if overmap_close.exists():
             overmap_close.click()
-        time.sleep(5)
+        time.sleep(1)
         # cls.poco("ActionButton").click()
         # time.sleep(5)
         # if exists(Template(cls.R('res/img/overmap.png'))):
