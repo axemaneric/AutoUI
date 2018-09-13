@@ -185,10 +185,11 @@ class ColorToggleTest(AvatarCustomizationCase):
                 catalog_items.child("Background").click()
             finally:
                 if recapture:
-                    snapshot("../../res/img/Avatar/ColorToggle/" +
+                    snapshot("../../res/img/AvatarInitial/ColorToggle/" +
                              toggle + "/" + str(index) + ".jpg")
-                self.assertTrue(exists(Template(self.R(
-                    "res/img/Avatar/ColorToggle/" + toggle + "/" + str(index) + ".jpg"), rgb=True, threshold=0.9)))
+                with self.subTest(item=toggle + str(index)):
+                    self.assertTrue(exists(Template(self.R(
+                        "res/img/AvatarInitial/ColorToggle/" + toggle + "/" + str(index) + ".jpg"), rgb=True, threshold=0.9)), toggle + str(index) + " not found")
 
             index += 1
 
@@ -234,8 +235,9 @@ class SelectionTest(AvatarCustomizationCase):
                                 if recapture:
                                     snapshot("../../res/img/AvatarInitial/" +
                                              name + "/" + str(index) + ".jpg")
-                                self.assertTrue(exists(Template(self.R(
-                                    "res/img/Avatar/" + name + "/" + str(index) + ".jpg"), rgb=True, threshold=0.9)))
+                                with self.subTest(item=name + str(index)):
+                                    self.assertTrue(exists(Template(self.R(
+                                        "res/img/AvatarInitial/" + name + "/" + str(index) + ".jpg"), rgb=True, threshold=0.9)), name + str(index) + " not found")
                             index += 1
 
     def runTest(self):
@@ -268,11 +270,7 @@ class FinishTest(AvatarCustomizationCase):
 
 if __name__ == '__main__':
     suite = AvatarCustomizationSuite([
-        SimpleTest(),
-        ColorToggleTest(),
-        SelectionTest(),
-        RandomizeTest(),
-        FinishTest()
+        SelectionTest()
     ])
     import pocounit
     pocounit.run(suite)

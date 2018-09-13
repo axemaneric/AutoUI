@@ -7,7 +7,15 @@ import time
 
 from testflow.lib.case.basecase import QuirkCase
 from testflow.lib.case.suite import QuirkSuite
-from poco.drivers.unity3d import UnityPoco
-from poco.drivers.android.uiautomation import AndroidUiautomationPoco
 
-from airtest.core.api import *
+from testflow.scripts.CreateAvatar import *
+from testflow.scripts.Currency import *
+
+if __name__ == '__main__':
+    suite = QuirkSuite([
+        Credits(),
+        Crystals(),
+        NameChange()
+    ])
+    import pocounit
+    pocounit.run(suite)

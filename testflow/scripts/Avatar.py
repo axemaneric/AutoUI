@@ -3,6 +3,9 @@ __author__ = "Eric"
 
 # Test script for avatar customization accessed through side menu. Since money
 # isn't infinite, only checks if item is able to be previewed inside store.
+# WARNING: LASTS 30+ Minutes, there are a LOT of accessories
+# Video capture has a cap of 30 minutes so the last few minutes are not recorded
+# in this test
 
 from testflow.lib.case.basecase import QuirkCase
 from testflow.lib.case.suite import QuirkSuite
@@ -31,7 +34,7 @@ class Avatar(QuirkCase):
     # loopItems clicks on every item in item panel
     # set recapture to true when new cosmetics come out to create new check
     # templates
-    def loopItems(self, name, recapture=True):
+    def loopItems(self, name, recapture=False):
         if self.poco("NewGrid").exists():
             content_grid = self.poco("NewGrid")
         else:
