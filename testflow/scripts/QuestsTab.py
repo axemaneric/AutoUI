@@ -25,32 +25,18 @@ from airtest.core.api import *
 class QuestsTab(QuirkCase):
 
     # install Quirk and generate a default avatar
-    @classmethod
-    def setUpClass(cls):
-        super(QuestsTab, cls).setUpClass()
-        cls.installQuirk()
-        cls.createAvatar()
-
     def setUp(self):
+        self.createAvatar()
         self.poco("daily_quests").click()
-
-    # check if initial state is Quest page then run tests in order
-    def runTest(self):
-        # snapshot('../../res/img/quests.png')
-        self.assertTrue(
-            exists(Template(self.R('res/img/quests.png'))), "Quests page not found")
-        self.claimRewardsTest()
-        self.swipeRightTest()
-        self.replaceQuestsTest()
 
     # to test if quests page has more quests on the right
     # by swipe right and assert change
     def swipeRightTest(self):
         viewport = self.poco("viewport")
         viewport.focus([0.8, 0.5]).drag_to(viewport.focus([0.2, 0.5]))
-        # snapshot('../../res/img/queststab/after_swipe.png')
+        # snapshot('../../res/img/queststab/after_swipe.jpg')
         self.assertTrue(
-            exists(Template(self.R('res/img/queststab/after_swipe.png'))), "Swipe right failed")
+            exists(Template(self.R('res/img/queststab/after_swipe.jpg'))), "Swipe right failed")
 
     # Tests if Avatar shop reward can be claimed
     # BEGIN: Quests page -> Exit to Commons -> Access Avatar through MenuBar ->
@@ -63,24 +49,24 @@ class QuestsTab(QuirkCase):
         self.poco("quick_menu_button").click()
         self.poco("avatar").click()
         time.sleep(5)
-        self.assertTrue(exists(Template(self.R('res/img/avatar.png'))),
+        self.assertTrue(exists(Template(self.R('res/img/avatar.jpg'))),
                         "Avatar customization screen not found")
         self.poco("DismissButton").click()
         time.sleep(10)
         self.poco("daily_quests").click()
         # assert false
-        # snapshot('../../res/img/queststab/reward.png')
+        # snapshot('../../res/img/queststab/reward.jpg')
         self.assertTrue(exists(Template(
-            self.R('res/img/queststab/reward.png'))), "No rewards available to be claimed")
+            self.R('res/img/queststab/reward.jpg'))), "No rewards available to be claimed")
         claim = self.poco("claim")
         self.assertTrue(claim.exists(), "Claim rewards button does not exists")
         claim.click()
-        # snapshot("../../res/img/queststab/after_claim.png")
+        # snapshot("../../res/img/queststab/after_claim.jpg")
         self.assertTrue(exists(Template(
-            self.R('res/img/queststab/after_claim.png'))), "Failed to claim rewards")
-        # snapshot("../../res/img/queststab/150.png")
+            self.R('res/img/queststab/after_claim.jpg'))), "Failed to claim rewards")
+        # snapshot("../../res/img/queststab/150.jpg")
         self.assertTrue(exists(
-            Template(self.R('res/img/queststab/150.png'))), "Gold value did not change")
+            Template(self.R('res/img/queststab/150.jpg'))), "Gold value did not change")
 
     # Test for checking if replacing quests work
     # BEGIN: Quests page -> Find nearest Dismiss button -> Replace quest ->
@@ -94,6 +80,15 @@ class QuestsTab(QuirkCase):
             quests_dismissed += 1
             time.sleep(1)
         self.assertEqual(quests_dismissed, dismisses_allowed, "Actual dismisses not qual to allowed number of dismisses")
+
+    # check if initial state is Quest page then run tests in order
+    def runTest(self):
+        # snapshot('../../res/img/quests.jpg')
+        self.assertTrue(
+            exists(Template(self.R('res/img/quests.jpg'))), "Quests page not found")
+        self.claimRewardsTest()
+        self.swipeRightTest()
+        self.replaceQuestsTest()
 
     def tearDown(self):
         self.poco("exit_container").click()

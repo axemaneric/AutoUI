@@ -13,13 +13,8 @@ from airtest.core.api import *
 
 class Emoji(QuirkCase):
 
-    @classmethod
-    def setUpClass(cls):
-        super(EmojiCase, cls).setUpClass()
-        cls.installQuirk()
-        cls.createAvatar()
-
     def setUp(self):
+        self.createAvatar()
         self.poco("pop_out_button").click()
 
     def quickEmoteTest(self):

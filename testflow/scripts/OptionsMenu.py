@@ -30,6 +30,7 @@ class OptionsMenu(QuirkCase):
 
     def setUp(self):
         self.poco = UnityPoco()
+        time.sleep(5)
         self.poco("OptionsButton").click()
 
     def slideLeft(self, option_name):
@@ -45,12 +46,12 @@ class OptionsMenu(QuirkCase):
         index = 0
         for option in graphic_options.children():
             option.click()
-            # snapshot('../../res/img/optionsmenu/grahpics/' + str(index) + '.png')
+            # snapshot('../../res/img/optionsmenu/grahpics/' + str(index) + '.jpg')
             index += 1
 
     def testAgeVerify(self):
         self.assertTrue(exists(Template(self.R(
-            'res/img/optionsmenu/age_verify.png'))), "Age verification screen not found")
+            'res/img/optionsmenu/age_verify.jpg'))), "Age verification screen not found")
         self.poco("too_young").click()
         self.poco("of_age").click()
         self.poco("continue").click()
@@ -64,14 +65,14 @@ class OptionsMenu(QuirkCase):
             self.poco("com.google.android.gms:id/account_profile_picture").click()
             time.sleep(1)
         self.assertTrue(exists(Template(self.R(
-            'res/img/optionsmenu/fail_authenticate.png'))), "Fail authentication screen not found")
+            'res/img/optionsmenu/fail_authenticate.jpg'))), "Fail authentication screen not found")
         print("Switching to unity poco")
         self.poco = UnityPoco()
         self.poco("Accept").click()
 
     def runTest(self):
         self.assertTrue(
-            exists(Template(self.R('res/img/options.png'))),
+            exists(Template(self.R('res/img/options.jpg'))),
             "Options menu not found")
 
         all_options = self.poco("content")
@@ -89,33 +90,47 @@ class OptionsMenu(QuirkCase):
                     self.poco(option_name).offspring("false").click()
                 elif option.offspring("options_container").exists():
                     self.clickAll(option_name)
-                self.check(Template(self.R('res/img/optionsmenu/' + option_name +
-                                           '.png')), "" + option_name + " option may contain errors")
+                with self.subTest(option=option_name):
+                    assert_exists(Template(self.R('res/img/optionsmenu/' + option_name +
+                                                  '.jpg'), threshold=0.6), "" + option_name + " option may contain errors")
             elif option_name == "restore_defaults":
                 # scrollDownClick clicks onto restore defaults button
-                if self.check(Template(self.R('res/img/optionsmenu/restore_defaults.png')), "Restore default screen not found"):
+                if exists(Template(self.R('res/img/optionsmenu/restore_defaults.jpg'))):
                     self.poco("Accept").click()
+                else:
+                    with self.subTest(option=option_name):
+                        raise AssertionError("Restore default screen not found")
             elif option_name == "blocked_players":
                 # scrollDownclick clicks onto blocked_players button
-                if self.check(Template(self.R('res/img/optionsmenu/blockedplayers.png')), "Blocked players screen not found"):
+                if exists(Template(self.R('res/img/optionsmenu/blockedplayers.jpg'))):
                     self.poco("exit_container").click()
+                else:
+                    with self.subTest(option=option_name):
+                        raise AssertionError("Blocked players screen not found")
             elif option_name == "link_google":
                 time.sleep(10)
-                if self.check(Template(self.R('res/img/optionsmenu/link_google.png')), "Google verification screen not found"):
+                if exists(Template(self.R('res/img/optionsmenu/link_google.jpg'))):
                     self.testLinkGoogle()
+                else:
+                    with self.subTest(option=option_name):
+                        raise AssertionError("Google verification screen not found")
             elif option_name == "age_verified":
-                if self.check(Template(self.R('res/img/optionsmenu/age_verify.png')), "Age verification screen not found"):
+                if exists(Template(self.R('res/img/optionsmenu/age_verify.jpg'))):
                     self.testAgeVerify()
+                else:
+                    with self.subTest(option=option_name):
+                        raise AssertionError("Age verification screen not found")
             # elif option_name = "instances":
             #     self.testInstances()
             elif option_name == "terms":
                 terms = self.poco("terms").child("background").children()
                 for term in terms:
                     term.click()
-                    self.check(Template(self.R(
-                        'res/img/optionsmenu/' + term.get_name() + '.png')), "Failed to find: " + term.get_name())
+                    assert_exists(Template(self.R(
+                        'res/img/optionsmenu/' + term.get_name() + '.jpg')), "Failed to find: " + term.get_name())
                     self.poco("exit_container").click()
-            self.poco("exit_container").click()
+
+        self.poco("exit_container").click()
 
     # @classmethod
     # def tearDownClass(cls):

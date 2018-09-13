@@ -17,14 +17,13 @@ from airtest.core.api import *
 # Battle tests may fail because of bugs like getting kicked into outpost
 class OvermapTravelCase(QuirkCase):
 
-    # pass both setUpClass and tearDownClass when using with a suite
     @classmethod
     def setUpClass(cls):
-        pass
+        cls.setUpClassSuite()
 
     @classmethod
     def tearDownClass(cls):
-        pass
+        cls.tearDownClassSuite()
 
     def setUp(self):
         self.poco = UnityPoco()
@@ -51,7 +50,6 @@ class OvermapTravelCase(QuirkCase):
         if self.poco("looking").exists():
             self.poco("looking").click()
             self.poco("quick_play").click()
-            self.assertTrue(exists(Template(self.R('res/img/overmap.jpg'))))
         else:
             snapshot('../../res/img/outposts/' + location + '.jpg')
             self.assertTrue(

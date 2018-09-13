@@ -73,6 +73,30 @@ class QuirkCase(PocoTestCase):
         uninstall(cls.package_name)
         super(QuirkCase, cls).tearDownClass()
 
+    @classmethod
+    def setUpClassSuite(cls):
+        print("setUpClass")
+        super(QuirkCase, cls).setUpClass()
+        if not current_device():
+            connect_device('Android:///')
+
+        dev = current_device()
+        meta_info_emitter = cls.get_result_emitter('metaInfo')
+        if device_platform() == 'Android':
+            meta_info_emitter.snapshot_device_info(
+                dev.serialno, dev.adb.get_device_info())
+
+        cls.poco = AndroidUiautomationPoco(screenshot_each_action=False)
+
+        action_tracker = ActionTracker(cls.poco)
+        cls.register_addon(action_tracker)
+        cls.site_capturer = SiteCaptor(cls.poco)
+        cls.register_addon(cls.site_capturer)
+
+    @classmethod
+    def tearDownClassSuite(cls):
+        super(QuirkCase, cls).tearDownClass()
+
     def scrollDownClick(self, scrollview, target, timeout=8):
         scrolls = 0
         while scrolls < timeout:
