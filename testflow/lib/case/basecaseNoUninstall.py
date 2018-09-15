@@ -65,12 +65,8 @@ class QuirkCase(PocoTestCase):
         cls.site_capturer = SiteCaptor(cls.poco)
         cls.register_addon(cls.site_capturer)
 
-        cls.installQuirkClass()
-
     @classmethod
     def tearDownClass(cls):
-        stop_app(cls.package_name)
-        uninstall(cls.package_name)
         super(QuirkCase, cls).tearDownClass()
 
     @classmethod

@@ -4,7 +4,7 @@ __author__ = "Eric"
 # Test script for traveling to every area on overmap. Each travel can be a
 # single test
 
-from testflow.lib.case.basecase import QuirkCase
+from testflow.lib.case.basecaseNoUninstall import QuirkCase
 from poco.drivers.unity3d import UnityPoco
 from testflow.lib.case.suite import QuirkSuite
 
@@ -17,13 +17,13 @@ from airtest.core.api import *
 # Battle tests may fail because of bugs like getting kicked into outpost
 class OvermapTravelCase(QuirkCase):
 
-    @classmethod
-    def setUpClass(cls):
-        cls.setUpClassSuite()
+    # @classmethod
+    # def setUpClass(cls):
+    #     cls.setUpClassSuite()
 
-    @classmethod
-    def tearDownClass(cls):
-        cls.tearDownClassSuite()
+    # @classmethod
+    # def tearDownClass(cls):
+    #     cls.tearDownClassSuite()
 
     def setUp(self):
         self.poco = UnityPoco()
@@ -51,7 +51,7 @@ class OvermapTravelCase(QuirkCase):
             self.poco("looking").click()
             self.poco("quick_play").click()
         else:
-            snapshot('../../res/img/outposts/' + location + '.jpg')
+            # snapshot('../../res/img/outposts/' + location + '.jpg')
             self.assertTrue(
                 exists(Template(self.R('res/img/outposts/' + location + '.jpg'))))
 

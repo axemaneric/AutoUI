@@ -86,8 +86,8 @@ class QuestsTab(QuirkCase):
         # snapshot('../../res/img/quests.jpg')
         self.assertTrue(
             exists(Template(self.R('res/img/quests.jpg'))), "Quests page not found")
-        self.claimRewardsTest()
-        self.swipeRightTest()
+        # self.claimRewardsTest()
+        # self.swipeRightTest()
         self.replaceQuestsTest()
 
     def tearDown(self):

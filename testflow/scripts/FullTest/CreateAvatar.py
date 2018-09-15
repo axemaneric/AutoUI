@@ -5,7 +5,7 @@ __author__ = "Eric"
 # Resets Avatar manually to default colors. Does not reset QUIRK
 # between tests.
 
-from testflow.lib.case.basecase import QuirkCase
+from testflow.lib.case.basecaseNoUninstall import QuirkCase
 from testflow.lib.case.suite import QuirkSuite
 from testflow.lib.utils.installation import install_android_app
 from poco.drivers.unity3d import UnityPoco
@@ -95,31 +95,6 @@ class AvatarCustomizationCase(QuirkCase):
 
     def setUp(self):
         self.poco = UnityPoco()
-
-        print("Checking for change...")
-
-        AvatarHead = Template(self.R('res/img/default-avatar.jpg'),
-                              rgb=True, threshold=0.9)
-        AvatarMenu = Template(self.R('res/img/default.jpg'), rgb=True,
-                              threshold=0.9)
-        if not exists(AvatarMenu) or not exists(AvatarHead):
-            try:
-                self.poco("ColorToggle").click()
-            except InvalidOperationException:
-                nav_bar = self.poco("SalonNavbarMobile(Clone)")
-                print("Scrolling nav bar...")
-                nav_bar.focus([0.5, 0.2]).drag_to(nav_bar.focus([0.5, 0.8]))
-                nav_bar.focus([0.5, 0.2]).drag_to(nav_bar.focus([0.5, 0.8]))
-                nav_bar.focus([0.5, 0.2]).drag_to(nav_bar.focus([0.5, 0.8]))
-                self.poco("ColorToggle").click()
-            finally:
-                self.poco("SkinToggle").click()
-                self.colorToggleScrollUp()
-                self.poco("ContentGrid").child("CatalogItemDisplayMobile(Clone)")[
-                    2].child("Background").click()
-                self.poco("HairToggle").click()
-                self.poco("ContentGrid").child("CatalogItemDisplayMobile(Clone)")[
-                    5].child("Background").click()
 
 
 #--------------------------------------------------------------------#

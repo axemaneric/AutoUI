@@ -21,7 +21,7 @@ class MenuBarCase(QuirkCase):
 
     def setUp(self):
         self.poco = UnityPoco()
-        self.createAvatar()
+        # self.createAvatar()
         self.poco("quick_menu_button").click()
 
     # @classmethod
@@ -41,7 +41,7 @@ class MenuBarCase(QuirkCase):
     def testHomebase(self):
         self.poco("home_base").click()
         time.sleep(15)
-        snapshot('../../res/img/homebase.jpg')
+        # snapshot('../../res/img/homebase.jpg')
         with self.subTest(test="Homebase"):
             assert_exists(Template(self.R('res/img/homebase.jpg')),
                           "Failed to enter homebase")
@@ -155,7 +155,7 @@ class MenuBarCase(QuirkCase):
 #         self.testOptions()
 
 
-class FullTest(MenuBarCase):
+class AllIcons(MenuBarCase):
 
     def runTest(self):
         self.testOvermap()

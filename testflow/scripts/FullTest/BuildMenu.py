@@ -8,7 +8,7 @@ __author__ = "Eric"
 
 import time
 
-from testflow.lib.case.basecase import QuirkCase
+from testflow.lib.case.basecaseNoUninstall import QuirkCase
 from testflow.lib.utils.installation import install_android_app
 from poco.drivers.unity3d import UnityPoco
 from poco.exceptions import InvalidOperationException
@@ -25,13 +25,11 @@ class BuildMenuCase(QuirkCase):
 
     def setUp(self):
         self.poco = UnityPoco()
-        if exists(Template(self.R('res/img/default.jpg'))):
-            self.createAvatar()
-            self.poco("quick_menu_button").click()
-            self.poco("build").click()
-            time.sleep(3)
-            self.poco("BuildNewQuirkButton").click()
-            time.sleep(10)
+        self.poco("quick_menu_button").click()
+        self.poco("build").click()
+        time.sleep(3)
+        self.poco("BuildNewQuirkButton").click()
+        time.sleep(10)
 
     # @classmethod
     # def tearDownClass(cls):
@@ -121,13 +119,13 @@ class TutorialTest(BuildMenuCase):
         assert_exists(Template(self.R('res/img/buildscreen.jpg')),
                       "Failed to enter build screen")
         self.poco("TutButton").click()
-        snapshot('../../res/img/buildmenu/tutorial.jpg')
+        # snapshot('../../res/img/buildmenu/tutorial.jpg')
         assert_exists(Template(self.R('res/img/buildmenu/tutorial.jpg')),
                       "Tutorial confirm did not show up")
         self.poco("Accept").click()
         time.sleep(5)
         for i in range(2, 5):
-            snapshot('../../res/img/buildmenu/tutorial' + str(i) + '.jpg')
+            # snapshot('../../res/img/buildmenu/tutorial' + str(i) + '.jpg')
             assert_exists(Template(self.R('res/img/buildmenu/tutorial' + str(i) + '.jpg')),
                           "Tutorial screen did not show up")
             self.poco("NextButton").click([0.5, 0.9])
@@ -140,10 +138,13 @@ class TutorialTest(BuildMenuCase):
 # all relevant UI
 class SaveTest(BuildMenuCase):
 
+    def setUp(self):
+        self.poco = UnityPoco()
+
     # tests only preview and save, checks for menu existence
     def runTest(self):
-        assert_exists(Template(self.R('res/img/buildscreen.jpg')),
-                      "Failed to enter build screen")
+        self.assertTrue(exists(Template(self.R('res/img/buildscreen.jpg'))),
+                        "Failed to enter build screen")
         self.poco("MenuButton").click()
         # snapshot('../../res/img/buildmenu/save.jpg')
         assert_exists(Template(self.R('res/img/buildmenu/save.jpg')),
@@ -160,12 +161,12 @@ class SaveTest(BuildMenuCase):
         assert_exists(Template(self.R('res/img/Commons.jpg')),
                       "Failed to return to Commons after exit build mode")
 
-    def tearDown(self):
-        self.poco("quick_menu_button").click()
-        self.poco("build").click()
-        time.sleep(3)
-        self.poco("BuildNewQuirkButton").click()
-        time.sleep(10)
+    # def tearDown(self):
+    #     self.poco("quick_menu_button").click()
+    #     self.poco("build").click()
+    #     time.sleep(3)
+    #     self.poco("BuildNewQuirkButton").click()
+    #     time.sleep(10)
 
 
 if __name__ == '__main__':

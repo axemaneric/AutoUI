@@ -5,8 +5,9 @@ __author__ = "Eric"
 
 import time
 
-from testflow.lib.case.basecase import QuirkCase
+from testflow.lib.case.basecaseNoUninstall import QuirkCase
 from poco.exceptions import PocoNoSuchNodeException
+from poco.drivers.unity3d import UnityPoco
 
 from airtest.core.api import *
 
@@ -14,8 +15,10 @@ from airtest.core.api import *
 class Emoji(QuirkCase):
 
     def setUp(self):
-        self.createAvatar()
-        self.poco("pop_out_button").click()
+        # self.createAvatar()
+        self.poco = UnityPoco()
+        if self.poco("quick_list").exists():
+            self.poco("pop_out_button").click()
 
     def quickEmoteTest(self):
         if exists(Template(self.R('res/img/emoji/more.jpg'))):
@@ -26,7 +29,7 @@ class Emoji(QuirkCase):
         index = 0
         for emoji in quick_emoji_list:
             emoji.click()
-            snapshot('../../res/img/emoji/quick' + str(index) + '.jpg')
+            # snapshot('../../res/img/emoji/quick' + str(index) + '.jpg')
             self.check(Template(self.R('res/img/emoji/quick' + str(index) + '.jpg')), "Quick " + str(index) + " not found on screen")
             index += 1
 
@@ -38,13 +41,13 @@ class Emoji(QuirkCase):
         for category in categories:
             category.click()
             cat_name = category.get_name().replace("_tab_", "_")
-            snapshot('../../res/img/emoji/' + cat_name + '.jpg')
+            # snapshot('../../res/img/emoji/' + cat_name + '.jpg')
             self.check(Template(self.R('res/img/emoji/' + cat_name + '.jpg')), cat_name + " Category not found")
             content_list = self.poco(cat_name).children()
             index = 0
             for item in content_list:
                 item.click()
-                snapshot('../../res/img/emoji/' + cat_name + str(index) + '.jpg')
+                # snapshot('../../res/img/emoji/' + cat_name + str(index) + '.jpg')
                 self.check(Template(self.R('res/img/emoji/' + cat_name + str(index) + '.jpg')), cat_name + str(index) + ' item not found')
                 if cat_name.startswith("emotes"):
                     time.sleep(5)

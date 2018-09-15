@@ -155,7 +155,7 @@ class MenuBarCase(QuirkCase):
 #         self.testOptions()
 
 
-class FullTest(MenuBarCase):
+class AllMenu(MenuBarCase):
 
     def runTest(self):
         self.testOvermap()

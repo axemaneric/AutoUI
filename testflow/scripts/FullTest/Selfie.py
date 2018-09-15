@@ -6,7 +6,7 @@ __author__ = "Eric"
 
 import time
 
-from testflow.lib.case.basecase import QuirkCase
+from testflow.lib.case.basecaseNoUninstall import QuirkCase
 from poco.drivers.unity3d import UnityPoco
 from poco.drivers.android.uiautomation import AndroidUiautomationPoco
 
@@ -16,7 +16,7 @@ from airtest.core.api import *
 class Selfie(QuirkCase):
 
     def setUp(self):
-        self.createAvatar()
+        self.poco = UnityPoco()
         # snapshot('../../res/img/Commons.jpg')
         self.poco("camera").click()
 
@@ -53,11 +53,11 @@ class Selfie(QuirkCase):
 
     def zoomTest(self):
         self.poco("handle").drag_to(self.poco("zoom_slider").focus([0.5, 0]))
-        snapshot('../../res/img/selfie/100.jpg')
+        # snapshot('../../res/img/selfie/100.jpg')
         assert_exists(Template(self.R('res/img/selfie/100.jpg')),
                       "Failed to zoom in 100%")
         self.poco("handle").drag_to(self.poco("zoom_slider").focus([0.5, 1]))
-        snapshot('../../res/img/selfie/0.jpg')
+        # snapshot('../../res/img/selfie/0.jpg')
         assert_exists(Template(self.R('res/img/selfie/0.jpg')),
                       "Failed to zoom out 0%")
 
@@ -65,14 +65,14 @@ class Selfie(QuirkCase):
         emotes = self.poco("emotes_container").children()
         for emote in emotes:
             emote.click()
-            snapshot('../../res/img/selfie/' + emote.get_name() + '.jpg')
+            # snapshot('../../res/img/selfie/' + emote.get_name() + '.jpg')
             assert_exists(Template(self.R('res/img/selfie/' + emote.get_name() +
                                           '.jpg')), "Emote: " + emote.get_name() + " not used")
             time.sleep(5)
 
     def reverseTest(self):
         self.poco("toggle").click()
-        snapshot('../../res/img/selfie/scenic.jpg')
+        # snapshot('../../res/img/selfie/scenic.jpg')
         assert_exists(Template(self.R('res/img/selfie/scenic.jpg')),
                       "Failed to scenic mode")
         self.poco("toggle").click()
@@ -86,11 +86,11 @@ class Selfie(QuirkCase):
                       "Retake button did not take user back to camera mode")
         self.exitCamera(need_confirm=False)
 
-        # shareTest only tests if Facebook option works
-        # Exits to Commons
-        # shareTest needs to be manually tested if disabled in alpha environment
-        # if not disabled, shareTest needs to be updated once other sharing options
-        # are implemented
+    # shareTest only tests if Facebook option works
+    # Exits to Commons
+    # shareTest needs to be manually tested if disabled in alpha environment
+    # if not disabled, shareTest needs to be updated once other sharing options
+    # are implemented
     def shareTest(self, file_access=False):
         self.cameraTrigger()
         self.poco("continue").click()

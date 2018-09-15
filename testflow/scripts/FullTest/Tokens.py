@@ -8,7 +8,7 @@ __author__ = "Eric"
 
 import time
 
-from testflow.lib.case.basecase import QuirkCase
+from testflow.lib.case.basecaseNoUninstall import QuirkCase
 from testflow.lib.utils.installation import *
 
 from poco.drivers.unity3d import UnityPoco
@@ -22,12 +22,12 @@ from airtest.core.api import *
 class Tokens(QuirkCase):
 
     def setUp(self):
-        self.createAvatar()
+        self.poco = UnityPoco()
 
     # opens pouch
     def pouchBefore(self):
         self.poco("tokens").click()
-        snapshot('../../res/img/tokens/main.jpg')
+        # snapshot('../../res/img/tokens/main.jpg')
         assert_exists(Template(self.R('res/img/tokens/main.jpg')),
                       "Tokens pouch did not show up")
         self.poco("ExitContainer").click()
@@ -50,7 +50,7 @@ class Tokens(QuirkCase):
                         "Token insert tab did not pop up or failed to walk to slot machine")
         self.poco("TokenButton1").click()
         time.sleep(20)
-        snapshot('../../res/img/tokens/rewards.jpg')
+        # snapshot('../../res/img/tokens/rewards.jpg')
         assert_exists(Template(self.R('res/img/tokens/rewards.jpg')),
                       "Collect loot menu failed to show")
 
@@ -69,7 +69,7 @@ class Tokens(QuirkCase):
     # Opens pouch again to check if token has been used
     def pouchAfter(self):
         self.poco("tokens").click()
-        snapshot('../../res/img/tokens/after.jpg')
+        # snapshot('../../res/img/tokens/after.jpg')
         assert_exists(Template(self.R('res/img/tokens/after.jpg')),
                       "Token has not been used")
         self.poco("ExitContainer").click()

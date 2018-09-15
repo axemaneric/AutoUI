@@ -5,7 +5,7 @@ __author__ = "Eric"
 
 import time
 
-from testflow.lib.case.basecase import QuirkCase
+from testflow.lib.case.basecaseNoUninstall import QuirkCase
 from poco.drivers.unity3d import UnityPoco
 from poco.drivers.android.uiautomation import AndroidUiautomationPoco
 
@@ -18,13 +18,14 @@ from airtest.core.api import *
 class Currency(QuirkCase):
 
     def setUp(self):
-        self.createAvatar()
-
+        self.poco = UnityPoco()
 
 #--------------------------------------------------------------------#
 #   TEST CASES                                                       #
 #--------------------------------------------------------------------#
 # Goes into store and attempts to use 15 crystals to buy 250 credits
+
+
 class Credits(Currency):
 
     def runTest(self):

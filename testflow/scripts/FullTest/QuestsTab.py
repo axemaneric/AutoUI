@@ -5,7 +5,8 @@ __author__ = "Eric"
 
 import time
 
-from testflow.lib.case.basecase import QuirkCase
+from testflow.lib.case.basecaseNoUninstall import QuirkCase
+from poco.drivers.unity3d import UnityPoco
 from poco.exceptions import PocoNoSuchNodeException
 
 from airtest.core.api import *
@@ -26,7 +27,7 @@ class QuestsTab(QuirkCase):
 
     # install Quirk and generate a default avatar
     def setUp(self):
-        self.createAvatar()
+        self.poco = UnityPoco()
         self.poco("daily_quests").click()
 
     # to test if quests page has more quests on the right

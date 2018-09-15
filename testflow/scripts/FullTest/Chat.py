@@ -10,7 +10,7 @@ __author__ = "Eric"
 
 import time
 
-from testflow.lib.case.basecase import QuirkCase
+from testflow.lib.case.basecaseNoUninstall import QuirkCase
 from testflow.lib.utils.installation import *
 from poco.drivers.unity3d import UnityPoco
 
@@ -21,7 +21,6 @@ class ChatCase(QuirkCase):
 
     def setUp(self):
         self.poco = UnityPoco()
-        self.createAvatar()
         self.poco("widget_toggle").click()
 
 
@@ -81,6 +80,9 @@ class EmojiChat(ChatCase):
         snapshot('../../res/img/chat/emoji_chat.jpg')
         self.assertTrue(exists(Template(self.R('res/img/chat/emoji_chat.jpg'))),
                         "Chat with emoji not found on screen")
+
+    def tearDown(self):
+        self.poco("exit_container").click()
 
 
 if __name__ == '__main__':
